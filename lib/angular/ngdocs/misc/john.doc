@@ -1,0 +1,26 @@
+@doc overview
+@name Overview
+@id index
+@description
+
+# This is my first example of documentation generated using the @doc syntax
+
+This page explains the Angular initialization process and how you can manually initialize Angular
+if necessary.
+
+
+# Angular `<script>` Tag
+
+This example shows the recommended path for integrating Angular with what we call automatic
+initialization.
+
+
+<pre>
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" ng-app>
+  <body>
+    ...
+    <script src="angular.js">
+  </body>
+</html>
+</pre>

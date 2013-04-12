@@ -1,0 +1,52 @@
+{
+  "name": "docular",
+  "description": "Extensible Documentation Generation Based on AngularJS's Documentation Generation",
+  "version": "0.1.1",
+  "homepage": "http://johndavidfive.com/docular/",
+  "author": {
+    "name": "John Martin",
+    "email": "johndavidfive@gmail.com",
+    "url": "http://johndavidfive.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/john/docular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/john/docular/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://johndavidfive.com/docular/blob/master/LICENSE-MIT"
+    },
+    {
+      "type": "CC_by_3.0",
+      "url": "http://johndavidfive.com/docular/blob/master/LICENSE-CC_by_3.0"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt": "~0.4.1"
+  },
+  "dependencies": {
+    "colors": "*",
+    "q-fs": "*",
+    "qq": "*",
+    "node.extend": "*"
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "documentation"
+  ]
+}
