@@ -8,12 +8,7 @@
 
 Options -Indexes
 RewriteEngine on
-RewriteCond %{HTTP_COOKIE}      ng-offline="NG_VERSION_FULL"
-RewriteRule appcache.manifest   appcache-offline.manifest
 
-## Redirect to the latest manifest
-RewriteCond %{HTTP_HOST}        ^docs-next\.angularjs\.org$
-RewriteRule appcache.manifest   http://code.angularjs.org/next/docs/appcache.manifest [R=301]
+RewriteCond %{REQUEST_FILENAME} !-f [NC]
+RewriteRule ^(.*)$ index.html
 
-## HTML5 URL Support ##
-RewriteRule .* index.html

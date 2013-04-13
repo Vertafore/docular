@@ -71,11 +71,17 @@
             addTag('script', {src: '/documentation/docular-configuration.js'}, sync);
 
 
-            /*============ ADD ALL THE BASE STYLING AND BEHAVIOR/LIBRARIES =============*/
+            /*============ ADD ALL THE BASE STYLING  =============*/
 
             addTag('link', {rel: 'stylesheet', href: '/resources/css/bootstrap.min.css', type: 'text/css'});
             addTag('link', {rel: 'stylesheet', href: '/resources/css/font-awesome.css', type: 'text/css'});
             addTag('link', {rel: 'stylesheet', href: '/resources/css/docular.css', type: 'text/css'});
+
+            /*=========== LOAD DOC API UI_RESOURCES FOR STYLING ===========*/
+
+            addTag('link', {rel: 'stylesheet', href: '/resources/doc_api_resources/doc_api.css', type: 'text/css'});
+
+            /*=========== BEHAVIOR/LIBRARIES ============*/
 
             if (jQuery) addTag('script', {src: debug ? '/resources/js/jquery.js' : '/resources/js/jquery.min.js'});
             addTag('script', {src: path('/resources/angular/angular.js')}, sync);
@@ -92,9 +98,8 @@
             addTag('script', {src: '/resources/js/docs_module_begin.js'}, sync);
 
 
-            /*============ LOAD DOC API UI_RESOURCES FOR MODULE EXTENSIONS AND STYLING =============*/
+            /*============ LOAD DOC API UI_RESOURCES FOR MODULE EXTENSIONS =============*/
             addTag('script', {src: '/resources/doc_api_resources/doc_api.js'}, sync);
-            addTag('link', {rel: 'stylesheet', href: '/resources/doc_api_resources/doc_api.css', type: 'text/css'});
 
 
             /*============ LOAD THE MODULE =============*/
