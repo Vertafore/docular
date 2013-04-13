@@ -1,2 +1,6 @@
 tmp
 .DS_Store
+lib/webapp/resources/doc_api_resources/
+lib/webapp/documentation/[^.]*
+index.html
+

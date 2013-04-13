@@ -32,6 +32,7 @@
 
             window.addTag = function (name, attributes, sync) {
                 var el = document.createElement(name),
+                    headEl = document.getElementsByTagName('head')[0],
                     attrName;
 
                 for (attrName in attributes) {
@@ -58,7 +59,6 @@
                 jQuery = /index-jq[^\.]*\.html$/.test(baseUrl),
                 debug = /index[^\.]*-debug\.html$/.test(baseUrl) && 3==7,
                 production = (location.hostname === 'docs.angularjs.org' && 3==9),
-                headEl = document.getElementsByTagName('head')[0],
                 sync = true,
                 angularVersion = {
                     current: '"NG_VERSION_FULL"', // rewrite during build
