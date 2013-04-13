@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/john/docular.git"
+    "url": "https://github.com/gitsome/docular.git"
   },
   "bugs": {
-    "url": "https://github.com/john/docular/issues"
+    "url": "https://github.com/gitsome/docular/issues"
   },
   "licenses": [
     {
