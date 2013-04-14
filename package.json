@@ -39,6 +39,8 @@
     "grunt": "~0.4.1"
   },
   "dependencies": {
+    "docular-doc-api-doc": "*",
+    "docular-doc-api-angular": "*",
     "colors": "*",
     "q-fs": "*",
     "qq": "*",
