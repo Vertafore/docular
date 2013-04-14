@@ -1,7 +1,7 @@
 {
   "name": "docular",
   "description": "Extensible Documentation Generation Based on AngularJS's Documentation Generation",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "http://johndavidfive.com/docular/",
   "author": {
     "name": "John Martin",
