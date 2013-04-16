@@ -83,7 +83,7 @@
 
             /*=========== BEHAVIOR/LIBRARIES ============*/
 
-            if (jQuery) addTag('script', {src: debug ? '/resources/js/jquery.js' : '/resources/js/jquery.min.js'});
+            if (jQuery) addTag('script', {src: debug ? '/resources/js/jquery.js' : '/resources/js/jquery.min.js'}, sync);
             addTag('script', {src: path('/resources/js/jquery.cookie.js')}, sync);
             addTag('script', {src: path('/resources/angular/angular.js')}, sync);
             addTag('script', {src: path('/resources/angular/angular-resource.js') }, sync);
