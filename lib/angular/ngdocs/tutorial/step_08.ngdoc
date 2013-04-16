@@ -113,7 +113,7 @@ __`app/partials/phone-detail.html`:__
 
 <div style="display: none">
 TODO!
-<img  class="diagram" src="documentation/img/tutorial/tutorial_08-09_final.png">
+<img  class="diagram" src="resources/img/angular/tutorial/tutorial_08-09_final.png">
 </div>
 
 ## Test
