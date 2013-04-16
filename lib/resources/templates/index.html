@@ -224,7 +224,7 @@
           <ul class="nav nav-list well" ng-repeat="module in modules">
 
             <li class="nav-header module">
-              <button type="button" class="module-visibility btn {{module.visible}}" ng-click="toggleVisible()"><i ng-class="iconClass(module)"></i></button>
+              <button type="button" class="module-visibility btn" ng-class="visibilityClass(module)" ng-click="toggleVisible()"><i ng-class="iconClass(module)"></i></button>
               <a class="guide" href="{{module.guideURL}}">module</a>
               <a class="code module-name" href="{{module.codeURL}}">{{module.name}}</a>
             </li>
