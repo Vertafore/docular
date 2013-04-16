@@ -11,7 +11,7 @@
 .form-search .well .module-section.hidden .nav-header a {color:#222; text-shadow: 1px 1px 1px #fff;}
 .nav li.nav-header.module {padding-left:3px; padding-right:7px;}
 .nav li.nav-header>a {float:left; display:inline-block;}
-.nav li.nav-header .module-visibility.force-open {display:none;}
+.nav li.nav-header .module-visibility {}
 .nav li.nav-header .module-visibility {padding:2px; line-height:11px; float:left; font-size:11px;}
 .nav li.nav-header .module-visibility i {margin-right:0px; width:auto;}
 .nav li.nav-header.module a.module-name {margin-left:2px; margin-right:2px; padding-left:4px;}
