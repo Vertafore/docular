@@ -9,7 +9,7 @@
 .nav-header {overflow:hidden;}
 .module-section.hidden .nav-header.section {background:#DDD;}
 .form-search .well .module-section.hidden .nav-header a {color:#222; text-shadow: 1px 1px 1px #fff;}
-.nav li.nav-header.module {padding-left:3px; padding-right:5px;}
+.nav li.nav-header.module {padding-left:3px; padding-right:7px;}
 .nav li.nav-header>a {float:left; display:inline-block;}
 .nav li.nav-header .module-visibility.force-open {display:none;}
 .nav li.nav-header .module-visibility {padding:2px; line-height:11px; float:left; font-size:11px;}
@@ -20,3 +20,4 @@
 /*============ DOCUMENTATION STYLING ============*/
 h1 {margin-bottom:20px; text-shadow:1px 1px 2px #AAA; font-size:28px; line-height:28px;}
 h1 .hint {text-shadow:none;}
+
