@@ -26,6 +26,9 @@ The best way to contribute is to set up a development environment described in t
 https://github.com/gitsome/grunt-docular/blob/master/README.md
 
 ## Release History
+version : 0.2.3
+*Add Disqus back in and update documentation
+
 version : 0.2.2
 *Finishes minimization functionality within the search bar
 *Sorting alphabetically of pages added back in
