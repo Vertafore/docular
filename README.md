@@ -1,3 +1,6 @@
+@doc overview
+@name docular.introduction
+@description
 # docular
 
 > Extensible Documentation Generation Based on AngularJS's Documentation Generation
@@ -26,6 +29,9 @@ The best way to contribute is to set up a development environment described in t
 https://github.com/gitsome/grunt-docular/blob/master/README.md
 
 ## Release History
+version : 0.2.4
+*Fixed sluggish doc_api loading
+
 version : 0.2.3
 *Add Disqus back in and update documentation
 

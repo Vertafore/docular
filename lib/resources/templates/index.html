@@ -77,9 +77,11 @@
             addTag('link', {rel: 'stylesheet', href: '/resources/css/font-awesome.css', type: 'text/css'});
             addTag('link', {rel: 'stylesheet', href: '/resources/css/docular.css', type: 'text/css'});
 
+
             /*=========== LOAD DOC API UI_RESOURCES FOR STYLING ===========*/
 
             addTag('link', {rel: 'stylesheet', href: '/resources/doc_api_resources/doc_api.css', type: 'text/css'});
+
 
             /*=========== BEHAVIOR/LIBRARIES ============*/
 
@@ -95,15 +97,16 @@
 
             /*============ DEFINE THE APPLICATION MODULE =============*/
 
-            //THE MAIN LOGIC FOR THE MODULE AND THE CONTROLLER
             addTag('script', {src: '/resources/js/docs_module_begin.js'}, sync);
 
 
             /*============ LOAD DOC API UI_RESOURCES FOR MODULE EXTENSIONS =============*/
+
             addTag('script', {src: '/resources/doc_api_resources/doc_api.js'}, sync);
 
 
-            /*============ LOAD THE MODULE =============*/
+            /*============ CLOSE AND LOAD THE MODULE =============*/
+
             addTag('script', {src: '/resources/js/docs_module_end.js'}, sync);
 
 
@@ -140,163 +143,167 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="navbar navbar-fixed-top main-nav">
-      <div class="navbar-inner">
+    <header class="header">
+        <div class="navbar navbar-fixed-top main-nav">
+            <div class="navbar-inner">
+                <div class="container">
+
+                    <!-- logo -->
+                    <a class="brand" href="http://angularjs.org" style="padding-top: 6px; padding-bottom: 0px;">
+                        <img class="AngularJS-small" src="http://angularjs.org/img/AngularJS-small.png">
+                    </a>
+
+                    <!-- Your own custom navigation -->
+                    <ul class="nav">
+                        <li><a href="http://johndavidfive.com"><i class="icon-home icon-white"></i> Project Home </a></li>
+                    </ul>
+
+                    <!-- Navigation for code groups -->
+                    <ul class="nav pull-right">
+                        <li ng-repeat="group in docGroups" class="dropdown pull-right">
+                          <a href="{{group.url}}" class="dropdown-toggle" data-toggle="dropdown" tabindex="2" >
+                            <i class="{{group.groupIcon}} icon-white"></i> {{group.title}} <b class="caret"></b>
+                          </a>
+                          <ul class="dropdown-menu">
+                                <li ng-repeat="section in group.sections"><a href="{{section.url}}">{{section.title}}</a></li>
+                          </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div role="main" class="container">
+
+        <div class="row clear-navbar"></div>
+
+        <div class="row">
+            <div class="span12">
+                <!--[if lt IE 7]>
+                <p class="alert alert-error">Your browser is <em>ancient!</em>
+                  <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
+                  <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to
+                  experience this site.
+                </p>
+                <![endif]-->
+
+                <!--[if lt IE 9]>
+                <div class="alert">
+                  You are using an old version of Internet Explorer.
+                  For better and safer browsing experience please <a href="http://www.microsoft.com/IE9">upgrade IE</a>
+                  or install <a href="http://google.com/chrome">Google Chrome browser</a>.
+                </div>
+                <![endif]-->
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="span3">
+                <form class="well form-search" ng-submit="submitForm()">
+                    <div class="dropdown search" ng-class="{open: focused && bestMatch.rank > 0 && bestMatch.page != currentPage}">
+                        <input type="text" ng-model="search" placeholder="search the docs" tabindex="1" accesskey="s" class="input-medium search-query" focused="focused">
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{bestMatch.page.url}}">{{bestMatch.page.shortName}}</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="spacer"></div>
+                    <div ng-show="search">Filtered results:</div>
+
+                    <!-- here we just render regular pages -->
+                    <div class="overview-items" ng-show="pages.length">
+                        <ul class="nav nav-list" ng-hide="page">
+                            <li ng-repeat="page in pages" ng-class="navClass(page)">
+                                <a href="{{page.url}}" tabindex="2">{{page.shortName}}</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- here we just render modules -->
+                    <ul class="nav nav-list well" ng-repeat="module in modules">
+
+                        <li class="nav-header module">
+                            <button type="button" class="module-visibility btn" ng-class="visibilityClass(module)" ng-click="toggleVisible()">
+                                <i ng-class="iconClass(module)"></i>
+                            </button>
+                            <a class="guide" href="{{module.guideURL}}">module</a>
+                            <a class="code module-name" href="{{module.codeURL}}">{{module.name}}</a>
+                        </li>
+
+                        <!-- TODO: make this semantic (root level scope is the issue) -->
+                        <span ng-repeat="section in module.sections | orderBy:'order'" class="module-section {{module.visible}}">
+                            <li class="nav-header section">
+                                <span class="section-count">{{section.pages.length}}</span>
+                                <a href="{{section.link}}" class="guide">{{section.name}}</a>
+                            </li>
+                            <li ng-repeat="page in section.pages" ng-class="navClass(page)" class="doc-listing">
+                                <a href="{{page.url}}" tabindex="2">{{page.shortName}}</a>
+                            </li>
+                        </span>
+
+                    </ul>
+
+                </form>
+            </div>
+
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li ng-repeat="crumb in breadcrumb">
+                        <span ng-hide="crumb.url">{{crumb.name}}</span>
+                        <a ng-show="crumb.url" href="{{crumb.url}}">{{crumb.name}}</a>
+                        <span ng-show="crumb.url" class="divider">/</span>
+                    </li>
+                </ul>
+
+                <div id="loading" ng-show="loading">Loading...</div>
+
+                <div ng-hide="loading" ng-include src="currentPage.partialUrl" onload="afterPartialLoaded()" autoscroll class="content"></div>
+
+                <div id="disqus" class="disqus">
+                    <h2>Discussion</h2>
+                    <div id="disqus_thread" class="content-panel-content"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="fader" ng-show="subpage" style="display: none"></div>
+        <div id="subpage" ng-show="subpage" style="display: none">
+            <div>
+                <h2>Would you like full offline support for this AngularJS Docs App?</h2>
+                <a ng-click="subpage=false">&#10005;</a>
+                <p>
+                    If you want to be able to access the entire AngularJS documentation offline, click the
+                    button below. This will reload the current page and trigger background downloads of all the
+                    necessary files (approximately 3.5MB). The next time you load the docs, the browser will
+                    use these cached files.
+                    <br><br>
+                    This feature is supported on all modern browsers, except for IE9 which lacks application
+                    cache support.
+                </p>
+                <button id="cacheButton" ng-click="enableOffline()">Let me have them all!</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
         <div class="container">
-
-        <!-- logo -->
-        <a class="brand" href="http://angularjs.org" style="padding-top: 6px; padding-bottom: 0px;">
-            <img class="AngularJS-small" src="http://angularjs.org/img/AngularJS-small.png">
-        </a>
-
-        <!-- Your own custom navigation -->
-        <ul class="nav">
-            <li><a href="http://johndavidfive.com"><i class="icon-home icon-white"></i> Project Home </a></li>
-        </ul>
-
-        <!-- Navigation for code groups -->
-        <ul class="nav pull-right">
-            <li ng-repeat="group in docGroups" class="dropdown pull-right">
-              <a href="{{group.url}}" class="dropdown-toggle" data-toggle="dropdown" tabindex="2" >
-                <i class="{{group.groupIcon}} icon-white"></i> {{group.title}} <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                    <li ng-repeat="section in group.sections"><a href="{{section.url}}">{{section.title}}</a></li>
-              </ul>
-            </li>
-        </ul>
-
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>
+                Angular Code licensed under the
+                <a href="https://github.com/angular/angular.js/blob/master/LICENSE" target="_blank">The MIT License</a>. Documentation code licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+            </p>
         </div>
-      </div>
-    </div>
-  </header>
-
-  <div role="main" class="container">
-    <div class="row clear-navbar"></div>
-
-    <div class="row">
-      <div class="span12">
-        <!--[if lt IE 7]>
-        <p class="alert alert-error">Your browser is <em>ancient!</em>
-          <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
-          <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to
-          experience this site.
-        </p>
-        <![endif]-->
-
-        <!--[if lt IE 9]>
-        <div class="alert">
-          You are using an old version of Internet Explorer.
-          For better and safer browsing experience please <a href="http://www.microsoft.com/IE9">upgrade IE</a>
-          or install <a href="http://google.com/chrome">Google Chrome browser</a>.
-        </div>
-        <![endif]-->
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="span3">
-        <form class="well form-search" ng-submit="submitForm()">
-          <div class="dropdown search"
-               ng-class="{open: focused && bestMatch.rank > 0 && bestMatch.page != currentPage}">
-            <input type="text" ng-model="search" placeholder="search the docs"
-                   tabindex="1" accesskey="s" class="input-medium search-query" focused="focused">
-            <ul class="dropdown-menu">
-              <li>
-                <a href="{{bestMatch.page.url}}">{{bestMatch.page.shortName}}</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="spacer"></div>
-          <div ng-show="search">Filtered results:</div>
-
-          <!-- here we just render regular pages -->
-          <ul class="nav nav-list" ng-hide="page">
-            <li ng-repeat="page in pages" ng-class="navClass(page)">
-              <a href="{{page.url}}" tabindex="2">{{page.shortName}}</a>
-            </li>
-          </ul>
-
-          <!-- here we just render modules -->
-          <ul class="nav nav-list well" ng-repeat="module in modules">
-
-            <li class="nav-header module">
-              <button type="button" class="module-visibility btn" ng-class="visibilityClass(module)" ng-click="toggleVisible()"><i ng-class="iconClass(module)"></i></button>
-              <a class="guide" href="{{module.guideURL}}">module</a>
-              <a class="code module-name" href="{{module.codeURL}}">{{module.name}}</a>
-            </li>
-
-            <!-- TODO: make this semantic (root level scope is the issue) -->
-            <span ng-repeat="section in module.sections | orderBy:'order'" class="module-section {{module.visible}}">
-                <li class="nav-header section">
-                    <span class="section-count">{{section.pages.length}}</span>
-                    <a href="{{section.link}}" class="guide">{{section.name}}</a>
-                </li>
-                <li ng-repeat="page in section.pages" ng-class="navClass(page)" class="doc-listing">
-                    <a href="{{page.url}}" tabindex="2">{{page.shortName}}</a>
-                </li>
-            </span>
-
-          </ul>
-
-        </form>
-      </div>
-      <div class="span9">
-
-        <ul class="breadcrumb">
-          <li ng-repeat="crumb in breadcrumb">
-            <span ng-hide="crumb.url">{{crumb.name}}</span>
-            <a ng-show="crumb.url" href="{{crumb.url}}">{{crumb.name}}</a>
-            <span ng-show="crumb.url" class="divider">/</span>
-          </li>
-        </ul>
-
-        <div id="loading" ng-show="loading">Loading...</div>
-
-        <div ng-hide="loading" ng-include src="currentPage.partialUrl" onload="afterPartialLoaded()" autoscroll class="content"></div>
-
-        <div id="disqus" class="disqus">
-          <h2>Discussion</h2>
-          <div id="disqus_thread" class="content-panel-content"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div id="fader" ng-show="subpage" style="display: none"></div>
-  <div id="subpage" ng-show="subpage" style="display: none">
-    <div>
-      <h2>Would you like full offline support for this AngularJS Docs App?</h2>
-      <a ng-click="subpage=false">&#10005;</a>
-      <p>
-        If you want to be able to access the entire AngularJS documentation offline, click the
-        button below. This will reload the current page and trigger background downloads of all the
-        necessary files (approximately 3.5MB). The next time you load the docs, the browser will
-        use these cached files.
-        <br><br>
-        This feature is supported on all modern browsers, except for IE9 which lacks application
-        cache support.
-      </p>
-      <button id="cacheButton" ng-click="enableOffline()">Let me have them all!</button>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <div class="container">
-      <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>
-        Angular Code licensed under the
-        <a href="https://github.com/angular/angular.js/blob/master/LICENSE" target="_blank">The
-          MIT License</a>. Documentation code licensed under <a
-            href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
-      </p>
-    </div>
-  </footer>
+    </footer>
 
 </body>
 </html>

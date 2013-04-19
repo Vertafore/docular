@@ -1,8 +1,11 @@
 
 /*============ DISQUS ============*/
+
 .disqus {padding:10px 20px; box-shadow:0px 0px 4px #ccc; -moz-border-radius:10px; border-radius:10px; margin-top:40px; margin-bottom:60px;}
 
+
 /*============ KEYWORD SEARCH STYLING ============*/
+
 .module-section .section-count {display:none;}
 .module-section.hidden .section-count {display:inline; color:#0088cc; text-shadow: none;}
 .module-section.hidden .doc-listing {display:none;}
@@ -17,7 +20,16 @@
 .nav li.nav-header.module a.module-name {margin-left:2px; margin-right:2px; padding-left:4px;}
 .nav li.nav-header.module a.module-name:hover {text-shadow: 1px 1px 1px #fff;}
 
+.overview-items {padding:10px 0px; border-radius:5px; -moz-border-radius:5px; background:#fff; margin-bottom:20px; margin-top:10px; box-shadow: 0px 0px 5px #AAA; }
+.overview-items.hidden {display:none;}
+
+
 /*============ DOCUMENTATION STYLING ============*/
-h1 {margin-bottom:20px; text-shadow:1px 1px 2px #AAA; font-size:28px; line-height:28px;}
-h1 .hint {text-shadow:none;}
+
+.content .hero-unit {padding:40px;}
+.content .hero-unit h1 {font-size:50px; line-height:50px; margin-bottom:0px;}
+.content h1 {margin-bottom:20px; text-shadow:1px 1px 2px #AAA; font-size:28px; line-height:28px;}
+.content h1 .hint {text-shadow:none;}
+.content img {max-width:100%; max-height:100%; margin-top:15px;}
+.content blockquote {margin-top:15px;}
 
