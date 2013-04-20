@@ -22,6 +22,8 @@
 
             /*============ INITIALIZATION =============*/
 
+            var baseURL = '/'
+
             var path = function(name) {
                 if (production) {
                     return name.replace(/\.js$/, '.min.js');
@@ -150,12 +152,12 @@
 
                     <!-- logo -->
                     <a class="brand" href="http://angularjs.org" style="padding-top: 6px; padding-bottom: 0px;">
-                        <img class="AngularJS-small" src="http://angularjs.org/img/AngularJS-small.png">
+                        <img class="AngularJS-small" src="/resources/img/docular-small.png">
                     </a>
 
                     <!-- Your own custom navigation -->
                     <ul class="nav">
-                        <li><a href="http://johndavidfive.com"><i class="icon-home icon-white"></i> Project Home </a></li>
+                        <li><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
                     </ul>
 
                     <!-- Navigation for code groups -->

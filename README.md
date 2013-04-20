@@ -1,6 +1,7 @@
 @doc overview
 @name docular.introduction
 @description
+
 # docular
 
 > Extensible Documentation Generation Based on AngularJS's Documentation Generation
@@ -10,7 +11,8 @@
 Note, this package is typically best used as a dependency within the grunt-docular plugin:
 https://npmjs.org/package/grunt-docular
 
-Much of the docular api is explained in that documentation.
+Much of the docular api is explained in that documentation. You can also view the documentation here:
+[http://grunt-docular.com]
 
 
 ```shell
@@ -22,7 +24,7 @@ AngularJS has an effective way of generating and displaying their documentation.
 
 There is work tracked in the issues to add back in most of the functionality that the original AngularJS documentation implementation had. There is additional functionality in the works tracked in the issues as well. Please provide your feedback and suggestions for features that should be included in this package out of the box.
 
-Currently, the "docular-doc-api-doc" and "docular-doc-api-angular" packackages are included as the default docular apis for parsing and rendering. Feel free to develop your own npm packages to customize your own documentation. More is coming in the way of documentation on how to load your own other than manually installing them within docular via npm install.
+Currently, the "docular-doc-api-doc" and "docular-doc-api-angular" packages are included as the default docular apis for parsing and rendering. Feel free to develop your own npm packages to customize your own documentation. More is coming in the way of documentation on how to load your own other than manually installing them within docular via npm install.
 
 ## Contributing
 The best way to contribute is to set up a development environment described in the readme for grunt-docular
