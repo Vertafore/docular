@@ -39,8 +39,9 @@ img.docular-small {width: 95px; height: 25px; }
 .content .hero-unit h1 {font-size:50px; line-height:50px; margin-bottom:0px;}
 .content h1 {margin-bottom:20px; text-shadow:1px 1px 2px #AAA; font-size:28px; line-height:28px;}
 .content h1 .hint {text-shadow:none;}
-.content img {max-width:100%; max-height:100%; margin-top:15px;}
+.content img {max-width:100%; max-height:100%; margin-top:15px; border-radius:10px; -moz-border-radius:10px; box-shadow:0px 1px 4px #444;}
 .content blockquote {margin-top:15px;}
+
 
 /*============ HOME STYLING ============*/
 
