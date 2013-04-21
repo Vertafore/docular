@@ -4,6 +4,13 @@
 .disqus {padding:10px 20px; box-shadow:0px 0px 4px #ccc; -moz-border-radius:10px; border-radius:10px; margin-top:40px; margin-bottom:60px;}
 
 
+/*============ GENERAL PAGE LAYOUT ============*/
+
+.footer {padding-top: 20px; background-color: #333; color: white; padding-bottom: 10px; }
+img.docular-small {width: 95px; height: 25px; }
+.clear-navbar { margin-top: 60px; }
+
+
 /*============ KEYWORD SEARCH STYLING ============*/
 
 .module-section .section-count {display:none;}
@@ -34,4 +41,16 @@
 .content h1 .hint {text-shadow:none;}
 .content img {max-width:100%; max-height:100%; margin-top:15px;}
 .content blockquote {margin-top:15px;}
+
+/*============ HOME STYLING ============*/
+
+.template-home {margin-bottom:5em;}
+.template-home h1 {margin-bottom:0.50em;}
+.documentation-groups {margin-bottom: 50px;}
+.documentation-group {background:#f5f5f5; padding:15px; -moz-border-radius:10px; border-radius:10px; margin-bottom:10px;}
+.documentation-group h2 {text-shadow:1px 1px 1px #ccc;}
+.documentation-group h2 i {color: #0088cc; margin-left:5px;}
+.hero-unit h1 {text-shadow:1px 1px 2px #999;}
+
+
 

@@ -7,11 +7,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="Description"
-        content="AngularJS is what HTML would have been, had it been designed for building web-apps.
-                 Declarative templates with data-binding, MVC, dependency injection and great
-                 testability story all implemented with pure client-side JavaScript!">
+        content="Docular and the grunt-docular plugin leverage the AngularJS documentation generation implementation. It provides extensible means of extracting documentation, generating partials, and presenting them in a webapp.">
+    <meta name="Keywords"
+        content="Docular, grunt-docular, angular, angular documentation, generation, markdown">
     <meta name="fragment" content="!">
-    <title ng-bind-template="AngularJS: {{partialTitle}}">AngularJS</title>
+    <title ng-bind-template="Docular: {{partialTitle}}">Docular</title>
 
     <script type="text/javascript">
 
@@ -151,8 +151,8 @@
                 <div class="container">
 
                     <!-- logo -->
-                    <a class="brand" href="http://angularjs.org" style="padding-top: 6px; padding-bottom: 0px;">
-                        <img class="AngularJS-small" src="/resources/img/docular-small.png">
+                    <a class="brand" href="/" style="padding-top: 6px; padding-bottom: 0px;">
+                        <img class="docular-small" src="/resources/img/docular-small.png">
                     </a>
 
                     <!-- Your own custom navigation -->
@@ -202,7 +202,66 @@
 
         </div>
 
-        <div class="row">
+        <div class="row template-home" ng-show="mode == 'home'">
+
+            <div class="span3">
+
+                <div class="documentation-groups">
+                    <div ng-repeat="group in docGroups" class="documentation-group">
+                        <h2><i class="{{group.groupIcon}} icon-white"></i> {{group.title}} </h2>
+                        <div class="documentation-group-info">
+                            <ul>
+                                <li ng-repeat="section in group.sections" class="documentation-group-section">
+                                    <a href="{{section.url}}">{{section.title}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="span9">
+
+                <h1>Welcome to Docular!</h1>
+                <p>
+                    Docular is based on AngularJS's documentation generation implementation. AngularJS's unique approach to generation and viewing provides for a more human readable and customizeable approach to the documentation process.
+                </p>
+                <p>
+                    The "<a href="https://npmjs.org/package/grunt-docular" target="_blank">grunt-docular</a>" plugin
+                    provides grunt users a way to utilize Docular's api to generate documentation during your build process
+                </p>
+
+                <h3>Ships with simple API and examples</h3>
+                <p>
+                    Docular ships with the ability to generate and display documentation for both AngularJS and the Docular code as a way to keep up with AngularJS documentation innovations as well as provide examples on how to generate your own documentation.
+                </p>
+
+                <p>
+                    Besides generating the documentation partials, AngularJS also provided front-end, node server, and .htacess files to help you view your documentation. Docular exposes this functionality so you can copy and paste the entire package and drop it into the root of an Apache server. You can also use the grunt docular-server task to spin up AngularJS's quick node server implementation for quick viewing.
+                </p>
+
+                <h3>It's Extensible!</h3>
+                <p>
+                    Docular abstracts out the core documentation generation functionality and modularized the AngularJS specific parsing, rendering, and viewing logic.
+                </p>
+                <p>
+                    Docular now runs by default with the ability to parse and display generic documentation using the "<a href="">docular-doc-api-doc</a>" extension, and parse and display AngularJS documentation using the "<a href="">docular-doc-api-angular</a>" extention.
+                </p>
+                <p>
+                    Since these are simply extensions to an existing generation and display api, you can create your own and customize the fields to be parsed, how the information is displayed, and the front-end behavior and styling.
+                </p>
+
+                <h3>Documentation Groups</h3>
+
+                <p>
+                    Check out the documentation for AngularJS and the Docular code throught the navigation bar or links to the left. Docular provides configurations to split documentation into groups, sections, and modules. Below are a list of the code groups and their corresponding sections.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="row" ng-show="mode == 'documentation'">
             <div class="span3">
                 <form class="well form-search" ng-submit="submitForm()">
                     <div class="dropdown search" ng-class="{open: focused && bestMatch.rank > 0 && bestMatch.page != currentPage}">
