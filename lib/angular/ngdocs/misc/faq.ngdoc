@@ -2,9 +2,7 @@
 @name FAQ
 @description
 
-#FAQ
-
-## Questions
+# Questions
 
 ### Why is this project called "AngularJS"? Why is the namespace called "ng"?
 

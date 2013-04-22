@@ -321,7 +321,7 @@
                     <li ng-repeat="crumb in breadcrumb">
                         <span ng-hide="crumb.url">{{crumb.name}}</span>
                         <a ng-show="crumb.url" href="{{crumb.url}}">{{crumb.name}}</a>
-                        <span ng-show="crumb.url" class="divider">/</span>
+                        <span ng-show="crumb.url || crumb.divider" class="divider">/</span>
                     </li>
                 </ul>
 
