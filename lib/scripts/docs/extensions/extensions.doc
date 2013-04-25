@@ -1,0 +1,28 @@
+@doc overview
+@name index
+@description
+
+# Docular Extensions
+
+Docular can be extended in multiple way to customize the parsing, object creation, rendering, and behavior and styling of documentation.
+
+## TODO:
+
+Finish documentation for the extenstions API ;-)
+
+@doc overview
+@name Default Doc API
+@description
+
+# Doc API
+
+The default doc api includes...
+
+
+@doc overview
+@name Angular Doc API
+@description
+
+# Angular Doc API
+
+The AngularJS framework provides ...
