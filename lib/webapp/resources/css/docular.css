@@ -131,7 +131,7 @@ img.docular-small {width: 95px; height: 25px; }
 
 .hero-unit {padding:40px;}
 .content .hero-unit h1 {font-size:50px; line-height:50px; margin-bottom:0px;}
-.content h1 {margin-bottom:20px; text-shadow:1px 1px 2px #AAA; font-size:28px; line-height:28px;}
+.content > h1 {margin-bottom:20px; text-shadow:1px 1px 2px #AAA; font-size:28px; line-height:28px;}
 .content h1 .hint {text-shadow:none;}
 .content img {max-width: 660px; max-height:100%; margin-top:0px; margin-bottom:15px; border-radius:10px; -moz-border-radius:10px; box-shadow:0px 1px 4px #444; padding:20px;}
 .content img.pull-left {margin-right:15px;}

@@ -69,7 +69,7 @@ available as a filter input in the list repeater (`phone in phones | filter:`__`
 changes to the data model cause the repeater's input to change, the repeater efficiently updates
 the DOM to reflect the current state of the model.
 
-      <img  class="diagram" src="resources/img/angular/tutorial/tutorial_03.png">
+      <img  class="diagram" src="img/tutorial/tutorial_03.png">
 
 * Use of the `filter` filter: The {@link api/ng.filter:filter filter} function uses the
 `query` value to create a new array that contains only those records that match the `query`.
@@ -122,9 +122,9 @@ To run the end-to-end test, open one of the following in a new browser tab:
 `http://localhost:[port-number]/[context-path]/test/e2e/runner.html`
 * casual reader: {@link http://angular.github.com/angular-phonecat/step-3/test/e2e/runner.html}
 
-Previously we've seen how Testacular can be used to execute unit tests. Well, it can also run the
+Previously we've seen how Karma can be used to execute unit tests. Well, it can also run the
 end-to-end tests! Use `./scripts/e2e-test.sh` script for that. End-to-end tests are slow, so unlike
-with unit tests, Testacular will exit after the test run and will not automatically rerun the test
+with unit tests, Karma will exit after the test run and will not automatically rerun the test
 suite on every file change. To rerun the test suite, execute the `e2e-test.sh` script again.
 
 This test verifies that the search box and the repeater are correctly wired together. Notice how

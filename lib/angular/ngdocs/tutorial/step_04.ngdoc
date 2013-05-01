@@ -45,7 +45,7 @@ We made the following changes to the `index.html` template:
 * First, we added a `<select>` html element named `orderProp`, so that our users can pick from the
 two provided sorting options.
 
-      <img  class="diagram" src="resources/img/angular/tutorial/tutorial_04.png">
+      <img  class="diagram" src="img/tutorial/tutorial_04.png">
 
 * We then chained the `filter` filter with {@link api/ng.filter:orderBy `orderBy`}
 filter to further process the input into the repeater. `orderBy` is a filter that takes an input
@@ -134,7 +134,7 @@ The unit test now verifies that the default ordering property is set.
 We used Jasmine's API to extract the controller construction into a `beforeEach` block, which is
 shared by all tests in the parent `describe` block.
 
-You should now see the following output in the Testacular tab:
+You should now see the following output in the Karma tab:
 
         Chrome 22.0: Executed 2 of 2 SUCCESS (0.021 secs / 0.001 secs)
 

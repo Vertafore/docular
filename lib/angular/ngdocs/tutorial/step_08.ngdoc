@@ -113,7 +113,7 @@ __`app/partials/phone-detail.html`:__
 
 <div style="display: none">
 TODO!
-<img  class="diagram" src="resources/img/angular/tutorial/tutorial_08-09_final.png">
+<img  class="diagram" src="img/tutorial/tutorial_08-09_final.png">
 </div>
 
 ## Test
@@ -147,7 +147,7 @@ __`test/unit/controllersSpec.js`:__
 ...
 </pre>
 
-You should now see the following output in the Testacular tab:
+You should now see the following output in the Karma tab:
 
     Chrome 22.0: Executed 3 of 3 SUCCESS (0.039 secs / 0.012 secs)
 
