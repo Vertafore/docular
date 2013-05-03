@@ -1,12 +1,12 @@
 .shout-outs {text-align: left; margin:0 0 1em 0;}
 .shout-outs img {width: auto; height:40px; border-radius:10px; -moz-border-radius:10px; box-shadow:0px 1px 4px #444; padding:20px; margin-left:0px; margin-right:20px;}
 
-.template-home {margin-bottom:5em;}
-.template-home h1 {margin-bottom:0.50em;}
-.template-home .hero-unit { -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4); -webkit-box-shadow:0px 1px 5px rgba(0, 0, 0, 0.4); box-shadow:0px 1px 5px rgba(0, 0, 0, 0.4);}
-.template-home .hero-unit h1 {margin-bottom:0;}
-.template-home h2 {margin-bottom:10px; margin-top:30px;}
-.template-home .documentation-groups h2 {margin-top:0; margin-bottom:10px;}
+.partial-home {margin-bottom:5em;}
+.partial-home h1 {margin-bottom:0.50em;}
+.partial-home .hero-unit { -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4); -webkit-box-shadow:0px 1px 5px rgba(0, 0, 0, 0.4); box-shadow:0px 1px 5px rgba(0, 0, 0, 0.4);}
+.partial-home .hero-unit h1 {margin-bottom:0;}
+.partial-home h2 {margin-bottom:10px; margin-top:30px;}
+.partial-home .documentation-groups h2 {margin-top:0; margin-bottom:10px;}
 
 /* CSS from: http://www.red-team-design.com/css3-ordered-list-styles */
 

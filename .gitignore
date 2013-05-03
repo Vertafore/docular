@@ -2,6 +2,7 @@ tmp
 .DS_Store
 lib/webapp/resources/doc_api_resources/*
 lib/webapp/documentation/*
+lib/webapp/resources/docular-partials/*
 index.html
 node_modules/*
 
