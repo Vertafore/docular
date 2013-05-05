@@ -14,15 +14,11 @@ Finish documentation for the extenstions API ;-)
 @name Default Doc API
 @description
 
-# Doc API
-
 The default doc api includes...
 
 
 @doc overview
 @name Angular Doc API
 @description
-
-# Angular Doc API
 
 The AngularJS framework provides ...

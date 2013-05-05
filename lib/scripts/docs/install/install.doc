@@ -1,7 +1,7 @@
 @doc overview
 @name index
 @description
-<h1>Getting Started</h1>
+#Getting Started
 
 Getting started with Docular is as simple as adding the grunt-docular Grunt plugin to your project and then simply start creating your documentation.
 
