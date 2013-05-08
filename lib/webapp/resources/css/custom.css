@@ -6,7 +6,7 @@
 .partial-home .hero-unit { -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4); -webkit-box-shadow:0px 1px 5px rgba(0, 0, 0, 0.4); box-shadow:0px 1px 5px rgba(0, 0, 0, 0.4);}
 .partial-home .hero-unit h1 {margin-bottom:0;}
 .partial-home h2 {margin-bottom:10px; margin-top:30px;}
-.partial-home .documentation-groups h2 {margin-top:0; margin-bottom:10px;}
+.partial-home .documentation-groups h2 {margin-top:0; margin-bottom:0px;}
 
 /* CSS from: http://www.red-team-design.com/css3-ordered-list-styles */
 
@@ -14,15 +14,15 @@ ol.rounded-list{
     counter-reset: li; /* Initiate a counter */
     list-style: none; /* Remove default numbering */
     *list-style: decimal; /* Keep using default numbering for IE6/7 */
-    font: 15px 'trebuchet MS', 'lucida sans';
+    font-size: 15px;
     padding: 0;
     margin-bottom: 2em;
     text-shadow: 0 1px 0 rgba(255,255,255,.5);
-    margin-left:2em;
+    margin-left:1.3em;
 }
 
 ol.rounded-list ol.rounded-list{
-    margin: 0 0 0 2em; /* Add some left margin for inner lists */
+    margin: 0 0 0 1.3em; /* Add some left margin for inner lists */
 }
 
 .rounded-list {margin-top:1em;}
@@ -33,16 +33,15 @@ ol.rounded-list ol.rounded-list{
     padding: .4em .4em .4em 2em;
     *padding: .4em;
     margin: .75em 0;
-    background: #eee;
+    background: #eeeeee;
     color: #333;
     text-decoration: none;
     border-radius: .3em;
     transition: all .3s ease-out;
-    -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2); -webkit-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.2); box-shadow:0px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .rounded-list a:hover{
-    background: #f3f3f3;
+    background: #e0e0e0;
     text-decoration: underline;
 }
 

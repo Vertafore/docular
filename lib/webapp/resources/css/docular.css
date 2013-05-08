@@ -9,6 +9,7 @@
 .footer {padding-top: 20px; background-color: #333; color: white; padding-bottom: 10px; }
 img.docular-small {width: 95px; height: 25px; }
 .clear-navbar { margin-top: 60px; }
+.body {padding-bottom:60px;}
 
 
 /*============ KEYWORD SEARCH STYLING ============*/
@@ -126,6 +127,49 @@ img.docular-small {width: 95px; height: 25px; }
   color: gray;
 }
 
+/*============ BREADCRUMBS ============*/
+ul.breadcrumb {position:relative; padding:0px;}
+ul.breadcrumb li {padding: 5px 7px; padding-right:0px; vertical-align: middle; text-align: center;}
+ul.breadcrumb li .divider {margin-right:0px;}
+ul.breadcrumb li:first-child {
+    margin-right:7px;
+    position:relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(top, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-right:1px solid #ccc;
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+    border-bottom:0px;
+    border-top:0px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+ul.breadcrumb li:first-child:hover {
+    background-color:#e6e6e6;
+    background-position:0 -15px;
+    -webkit-transition:background-position 0.1s linear;
+    -moz-transition:background-position 0.1s linear;
+    -ms-transition:background-position 0.1s linear;
+    -o-transition:background-position 0.1s linear;
+    transition:background-position 0.1s linear;
+}
+ul.breadcrumb li:first-child:hover a {text-decoration: none;}
+ul.breadcrumb li:first-child a {text-shadow:-1px -1px 1px #fff;}
+ul.breadcrumb li:first-child .divider {display:none;}
 
 /*============ DOCUMENTATION STYLING ============*/
 
@@ -143,6 +187,7 @@ img.docular-small {width: 95px; height: 25px; }
 .content h3,
 .content h4,
 .content h5 { margin-top: 1em; margin-bottom: 0.5em;}
+.content .pager {margin-top:25px;}
 
 /*============ HOME STYLING ============*/
 
@@ -150,8 +195,11 @@ img.docular-small {width: 95px; height: 25px; }
 .documentation-group li {text-shadow:-1px -1px 1px #fff;}
 .documentation-group {background:#eee; padding:15px; -moz-border-radius:10px; border-radius:10px; margin-bottom:10px;}
 .documentation-group h2 {text-shadow:-1px -1px 1px #fff;}
-.documentation-group h2 i {color: #0088cc; margin-left:5px;}
+.documentation-group h2 i {color:#CCC; text-shadow: 1px 1px 1px #666; margin-left:5px;}
 .hero-unit h1 {text-shadow:1px 1px 2px #999;}
+
+.section-group .hero-unit h2 {font-size: 48px; text-shadow: 1px 1px 2px #ccc;}
+.section-group h2 i {color:#CCC; text-shadow: 1px 1px 1px #666; margin-right:15px;}
 
 
 
