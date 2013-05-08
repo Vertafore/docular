@@ -213,9 +213,11 @@ var generate = function (options_in, callBack) {
 
         docular_partial_home: false, //you can provide a url to partial to be used on the homepage, if not defined it will pull in a default
 
+<<<<<<< HEAD
         docular_partial_group_index: false //you can provide a url to partial to be used on as the root page of a group, if not defined it will pull in a default
-        
+=======
         copyDocDir: false //relative path to docs directory to copy the webapp folder to. ex. '/docs'
+>>>>>>> cdadc2935f5bdd285be38e25f740f21e6e3e4b49
     };
 
     var options = nodeExtend(true, defaultOptions, options_in);
