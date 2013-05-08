@@ -191,6 +191,11 @@ Use npm to create an npm package for your test. Run `npm init` and follow the di
 npm init
 ```
 
+For Grunt v4.x 
+```shell
+npm install grunt
+```
+
 Use npm to access the global sym link for the grunt-docular npm package:
 ```shell
 npm link grunt-docular
