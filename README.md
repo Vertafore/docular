@@ -196,7 +196,6 @@ For Grunt v4.x
 npm install grunt
 ```
 
-Install 
 Use npm to access the global sym link for the grunt-docular npm package:
 ```shell
 npm link grunt-docular
