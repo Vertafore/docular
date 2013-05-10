@@ -314,7 +314,7 @@ module.exports = function(grunt) {
 };
 ```
 
-## The difference between Docs and Scripts
+## <a id="docsnscripts"></a> The difference between Docs and Scripts
 
 We provide two buckets, "docs", and "scripts" as configurations within a section object. You can certainly use both within one section but understanding the difference is important.
 

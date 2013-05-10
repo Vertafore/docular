@@ -156,7 +156,7 @@
 
                     <!-- Navigation for code groups -->
                     <ul class="nav">
-                        <li ng-repeat="group in docGroups" class="dropdown">
+                        <li ng-repeat="group in docGroups" class="dropdown" ng-show="group.visible">
                           <a href="{{group.url}}" class="dropdown-toggle" data-toggle="dropdown" tabindex="2" >
                             <i class="{{group.groupIcon}} icon-white"></i> {{group.title}} <b class="caret"></b>
                           </a>
