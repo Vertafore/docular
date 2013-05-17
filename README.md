@@ -49,15 +49,15 @@ grunt.initConfig({
 ```
 
 ### Options
-baseURL (Type:`string`, default=""): Angular uses the <base> tag to designate the baseUrl for an app. This is helpful for helping resolve routes and location through the $location service
+``baseURL`` (Type: `string`, default: `""`): Angular uses the <base> tag to designate the baseUrl for an app. This is helpful for helping resolve routes and location through the $location service
 
-showAngularDocs (Type:`boolean`, default=false): The angular source is included in the docular package so it can be parsed and rendered to both help test the docular package and provide angular documentation for apps that use it.
+``showAngularDocs`` (Type: `boolean`, default: `false`): The angular source is included in the docular package so it can be parsed and rendered to both help test the docular package and provide angular documentation for apps that use it.
 
-showDocularDocs (Type:`boolean`, default=false): Setting this to true will have docular parse and render the documentation for the docular plugin itself. This is helpful for developers to understand the default doc api (docular-doc-api-doc) to help them create their own docular api extensions.
+``showDocularDocs`` (Type: `boolean`, default: `false`): Setting this to true will have docular parse and render the documentation for the docular plugin itself. This is helpful for developers to understand the default doc api (docular-doc-api-doc) to help them create their own docular api extensions.
 
-docAPIOrder (Type:`array [string]`, default=['doc', 'angular']): For each docular api extension, we need to know which order to include the UI scripts and CSS due to overrides etc..
+``docAPIOrder`` (Type: `array [string]`, default: `['doc', 'angular']`): For each docular api extension, we need to know which order to include the UI scripts and CSS due to overrides etc..
 
-groups (Type:`array [group object]`, default=[]): This is an array of group objects. Groups have their own api but generally consists of some meta data and lists of files that need to be parsed and rendered for documentation. For more check out
+``groups`` (Type: `array [group object]`, default: `[]`): This is an array of group objects. Groups have their own api but generally consists of some meta data and lists of files that need to be parsed and rendered for documentation. For more check out
 
 ### Groups
 Group configurations for Angular and the docular documentation are stored and pushed into all groups if you set the showAngularDocs and showDocularDocs options to true. These configurations are identical to what you would use to configure docular to parse and render your own documentation.
@@ -93,21 +93,21 @@ Here is the group configuration for Angular:
 }
 ```
 ### Group Object Attributes
-groupTitle (required) `string` : The string value that will propogate up to the UI as the name of the tab
+``groupTitle`` (required) `string` : The string value that will propogate up to the UI as the name of the tab
 
-groupId (required) `string` : This will be the id used globally within the code and as the directory for this code. It will show in the URL for these docs ie `http:/localhost:8000/documentation/<groupId>/blah blah`.
+``groupId`` (required) `string` : This will be the id used globally within the code and as the directory for this code. It will show in the URL for these docs ie 'http:/localhost:8000/documentation/<groupId>/blah blah'.
 
-groupIcon (default="icon-book") `string` : This is an optional attribute that determines the class put on the icon attribute in the UI. This comes from Twitter Boostrap. See [Twitter Boostrap](http://twitter.github.io/bootstrap/base-css.html#images)
+``groupIcon`` `(default="icon-book")` string : This is an optional attribute that determines the class put on the icon attribute in the UI. This comes from Twitter Boostrap. See [Twitter Boostrap](http://twitter.github.io/bootstrap/base-css.html#images)
 
-sections (required) `array [sectionObject]` : This determines the different sections of documentation within your group. You can see the Angular example above in how it's documentation is broken up into sections that make logical sense.
+``sections`` (required) `array [sectionObject]` : This determines the different sections of documentation within your group. You can see the Angular example above in how it's documentation is broken up into sections that make logical sense.
 
-sectionObject.id (required) `string` : This will be the id used globally within the code and will be the identifier in the url for documentation within this section ie `http:/localhost:8000/documentation/<groupId>/<sectionObject.id>/blah blah`.
+``sectionObject.id`` (required) `string` : This will be the id used globally within the code and will be the identifier in the url for documentation within this section ie 'http:/localhost:8000/documentation/<groupId>/<sectionObject.id>/blah blah'.
 
-sectionObject.title (required) `string` : The title that will show in the tab drop downs for this section of documentation
+``sectionObject.title`` (required) `string` : The title that will show in the tab drop downs for this section of documentation
 
-sectionObject.scripts (optional) `array [string]` : The scripts array is an array of paths to folders and files that contain scripts (really of any kind... could probably be php or java or whatever although that has not been tested). These files will be parsed for documentation that resides within comments (within /** and *). The end of a comment will conclude the end of a complete documentation entry.
+``sectionObject.scripts`` (optional) `array [string]` : The scripts array is an array of paths to folders and files that contain scripts (really of any kind... could probably be php or java or whatever although that has not been tested). These files will be parsed for documentation that resides within comments (within /** and *). The end of a comment will conclude the end of a complete documentation entry.
 
-sectionObject.docs (optional) `array [string]` : The docs array is an array of paths to folders and files that contain documentation. These files will be parsed assuming that the docs here are not within comments. So this is basically a text file full of docs. This is a great way to provide supplimental documentation, tutorials, guides, and definitions for types etc..
+``sectionObject.docs`` (optional) `array [string]` : The docs array is an array of paths to folders and files that contain documentation. These files will be parsed assuming that the docs here are not within comments. So this is basically a text file full of docs. This is a great way to provide supplimental documentation, tutorials, guides, and definitions for types etc..
 
 
 ## Contributing
@@ -191,7 +191,7 @@ Use npm to create an npm package for your test. Run `npm init` and follow the di
 npm init
 ```
 
-For Grunt v4.x 
+For Grunt v4.x
 ```shell
 npm install grunt
 ```

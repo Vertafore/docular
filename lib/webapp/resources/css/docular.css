@@ -182,12 +182,18 @@ ul.breadcrumb li:first-child .divider {display:none;}
 .content img.pull-left {margin-right:15px;}
 .content img.pull-right {margin-left:15px;}
 .content blockquote {margin-top:15px;}
-.content code {background-color: inherit; color: inherit; border: none; padding: 0; font-size: inherit; font-family: monospace;}
 .content h2,
 .content h3,
 .content h4,
 .content h5 { margin-top: 1em; margin-bottom: 0.5em;}
 .content .pager {margin-top:25px;}
+.content h1 code,
+.content h2 code,
+.content h3 code,
+.content h4 code,
+.content a code,
+.content code.plain {background-color: inherit; color: inherit; border: none; padding: 0; font-size: inherit; font-family: monospace;}
+
 
 /*============ HOME STYLING ============*/
 
@@ -195,11 +201,8 @@ ul.breadcrumb li:first-child .divider {display:none;}
 .documentation-group li {text-shadow:-1px -1px 1px #fff;}
 .documentation-group {background:#eee; padding:15px; -moz-border-radius:10px; border-radius:10px; margin-bottom:10px;}
 .documentation-group h2 {text-shadow:-1px -1px 1px #fff;}
-.documentation-group h2 i {color:#444; text-shadow: 1px 1px 1px #666; margin-left:5px;}
+.documentation-group h2 i {color:#CCC; text-shadow: 1px 1px 1px #666; margin-left:5px;}
 .hero-unit h1 {text-shadow:1px 1px 2px #999;}
 
 .section-group .hero-unit h2 {font-size: 48px; text-shadow: 1px 1px 2px #ccc;}
 .section-group h2 i {color:#CCC; text-shadow: 1px 1px 1px #666; margin-right:15px;}
-
-
-

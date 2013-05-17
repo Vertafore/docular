@@ -130,7 +130,7 @@ module.exports = function(grunt) {
 };
 ```
 
-This website (grunt-docular.com) has both the <span class="label">showAngularDocs</span> and <span class="label">showDocularDocs</span> flags set to true. This allows you to view all the documentation for these two groups. This site has these set to true so you can see the difference between two documentation groups.
+This website (grunt-docular.com) has both the ``showAngularDocs`` and ``showDocularDocs`` flags set to true. This allows you to view all the documentation for these two groups. This site has these set to true so you can see the difference between two documentation groups.
 
 <pager></pager>
 
@@ -149,18 +149,18 @@ This website (grunt-docular.com) has both the <span class="label">showAngularDoc
             <h3> Properties </h3>
             <ul class="parameters">
                 <li>
-                    <code ng:non-bindable="">groupTitle – {string} – </code>
+                    ``groupTitle`` – `{string}` –
                     <p>The name of group. Appears in the UI for tabs etc...</p></li>
                 <li>
-                    <code ng:non-bindable="">groupId – {string} – </code>
+                    ``groupId`` – `{string}` –
                     <p>The unique id of the group. Visible in the url for this documentation group</p>
                 </li>
                 <li>
-                    <code ng:non-bindable="">groupIcon – {string} – </code>
+                    ``groupIcon`` – `{string}` – </code>
                     <p>The class used in rendering icons for this group. See the icon options you have at <a href="http://fortawesome.github.io/Font-Awesome/" target="_bank">Font Awesome</a>. The default is "icon-book".</p>
                 </li>
                 <li>
-                    <code ng:non-bindable="">sections – {array} – </code>
+                    ``sections`` – `{array}` –
                     <p>Holds <a href="">section objects</a> which contain configurations that point Docular to docs that need to be parsed. Sections are seen as dropdown items within a group tab. Sections are meant to provide a logical way to partition your documentation and apis. In the case of both Docular and AngularJS, sections provides ways to separate actual API information from "overview" and "tutorial" like documentation. It defaults to an empty array which results in no creation of groups.</p>
                 </li>
             </li>
@@ -170,7 +170,7 @@ This website (grunt-docular.com) has both the <span class="label">showAngularDoc
     </li>
 </ul>
 
-This website (grunt-docular.com) has the <span class="label">groups</span> configuration set to an empty array. This is because there is no additional documentation necessary to generate for the "grunt-docular.com" site. Since the group configurations are built into Docular, we can just switch them on using the <span class="label">showDocularDocs</span> flag which adds the Docular group into the mix at run time.
+This website (grunt-docular.com) has the ``groups`` configuration set to an empty array. This is because there is no additional documentation necessary to generate for the "grunt-docular.com" site. Since the group configurations are built into Docular, we can just switch them on using the ``showDocularDocs`` flag which adds the Docular group into the mix at run time.
 
 This is what it would look like if we were to manually add the Docular documetation group configuration:
 
@@ -223,15 +223,15 @@ module.exports = function(grunt) {
             <h3> Properties </h3>
             <ul class="parameters">
                 <li>
-                    <code ng:non-bindable="">id – {string} – </code>
+                    ``id`` – `{string}` –
                     <p>The unique id that is used internally and appears within the url for each doc parsed</p>
                 </li>
                 <li>
-                    <code ng:non-bindable="">title – {string} – </code>
+                    ``title`` – `{string}` –
                     <p>The title of the section that is used often in the UI</p>
                 </li>
                 <li>
-                    <code ng:non-bindable="">scripts – {array : paths} – </code>
+                    ``scripts`` – `{array : paths}` –
                     <p>An array of paths that may reference a directory or a single file. The single file or every file in the directory will be scanned for documentation THAT IS WITHIN BLOCK COMMENTS.</p>
                     <div class="alert alert-info">Currently, scripts need to end in ".js". This will change in the future to allow any type of script.</div>
                     <pre>
@@ -244,7 +244,7 @@ module.exports = function(grunt) {
                     </pre>
                 </li>
                 <li>
-                    <code ng:non-bindable="">docs – {array : paths} – </code>
+                    ``docs`` – `{array : paths}` –
                     <p>An array of paths that may reference a directory or a single file. The single file or every file in the directory will be scanned for documentation THAT IS NOT WITHIN COMMENTS.</p>
                     <div class="alert alert-info">Doc files must have an extension of ".doc" or ".ngdoc".</div>
                     <pre>
@@ -255,7 +255,7 @@ module.exports = function(grunt) {
                     </pre>
                 </li>
                 <li>
-                    <code ng:non-bindable="">rank – {object} – </code>
+                    ``rank`` – `{object}` –
                     <p>The rank object contains key value pairs, where the key is an id of a document and the value is the ranking associated with that document. This object is used to place sections in order within the UI. If a document does not have a rank, it is automatically set to a large number (which pushes it to the bottom).</p>
                 </li>
             </li>
@@ -313,8 +313,8 @@ module.exports = function(grunt) {
 
 };
 ```
-
-## <a id="docsnscripts"></a> The difference between Docs and Scripts
+<a id="docsnscripts" class="anchor"></a>
+## The difference between Docs and Scripts
 
 We provide two buckets, "docs", and "scripts" as configurations within a section object. You can certainly use both within one section but understanding the difference is important.
 
@@ -332,7 +332,7 @@ There is a lot of flexibility so just follow what works for your project.
 {
     groupTitle: 'Docular',
     groupId: 'docular',
-    groupIcon: 'icon-beer',
+    groupIcon: 'icon-edit',
     sections: [
         {
             id: "docularinstall",
@@ -340,7 +340,11 @@ There is a lot of flexibility so just follow what works for your project.
             docs: [
                 "lib/scripts/docs/install"
             ],
-            rank: {'installnode':1, 'installgrunt':2, 'installdocular':3}
+            rank: {
+                'installnode':1,
+                'installgrunt':2,
+                'installdocular':3
+            }
         },
         {
             id: "docularconfigure",
@@ -365,12 +369,39 @@ There is a lot of flexibility so just follow what works for your project.
                 "lib/scripts/docs/create"
             ],
             rank: {
-                'workflow':1,
-                'preddo':2,
-                'ddo':3,
-                'children':4,
-                'partial':5,
-                'divisions':6
+                'configuregroup':1,
+                'configuresection':2,
+                'firstdoc':3
+            }
+        },
+        {
+            id: "apisyntax",
+            title: "Script and API Syntax",
+            docs: [
+                "lib/scripts/docs/apisyntax"
+            ],
+            rank: {
+                'blockdef':1,
+                'identifier':2,
+                'naming':3,
+                'fields':4,
+                'modules':5,
+                'sections':6,
+                'types':7,
+                'children':8
+            }
+        },
+        {
+            id: "docsyntax",
+            title: '"Doc" and Overview Syntax',
+            docs: [
+                "lib/scripts/docs/docsyntax"
+            ],
+            rank: {
+                'blockdef':1,
+                'overview':2,
+                'overviewindex':3,
+                'links':4
             }
         },
         {
@@ -458,14 +489,14 @@ We made some small tweaks, but ported over most of the AngularJS "scripts" and "
             <h3> Properties </h3>
             <ul class="parameters">
                 <li>
-                    <code ng:non-bindable="">shortName – {string} – </code>
+                    ``shortName`` – `{string}` –
                     <p>The shortName property required by Disqus</p></li>
                 <li>
-                    <code ng:non-bindable="">url – {string} – </code>
+                    ``url`` – `{string}` –
                     <p>The url property required by Disqus</p>
                 </li>
                 <li>
-                    <code ng:non-bindable="">dev – {boolean} (false) – </code>
+                    ``dev`` – `{boolean} (false)` –
                     <p>When true provides a true flag to the Disqus dev API</p>
                 </li>
             </li>
@@ -524,10 +555,10 @@ module.exports = function(grunt) {
             <h3> Properties </h3>
             <ul class="parameters">
                 <li>
-                    <code ng:non-bindable="">accountName – {string} – </code>
+                    ``accountName`` – `{string}` –
                     <p>The accountName property required by Google Analytics</p></li>
                 <li>
-                    <code ng:non-bindable="">domainName – {string} – </code>
+                    ``domainName`` – `{string}` –
                     <p>The domainName property required by Google Analytics</p>
                 </li>
             </li>

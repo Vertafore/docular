@@ -1,0 +1,268 @@
+@doc overview
+@id index
+@name Documentation Syntax
+@description
+
+#Script and API Syntax
+
+Follow this overview to familiarize yourself with the syntax used to generate API documentation within script files.
+
+<page-list></page-list>
+
+
+@doc overview
+@id blockdef
+@name Documentation In Comment Blocks
+@description
+
+Docular parses your script files ( {@link booyah designated in your Grunt config} ), and looks for documentation that live
+within blocked comments. A block comment looks like this:
+```js
+
+/**
+ * This is a block comment
+ */
+
+/**
+ * This is a multi
+ * line block comment
+ */
+
+```
+## Sample Documentation Within Comment Blocks
+
+Here is an example of Docular documentation within comment blocks within a script file:
+
+```js
+
+//this comment is ignored because it is not in a block
+
+/**
+ * @doc function
+ * @name myModule.moduleSection:thisIsAFunction
+ *
+ * @description This function rules!
+ *
+ * This is still part of the description!!!
+ */
+
+var thisIsAFunction = function () {};
+
+```
+
+## Summary
+
+So here are a few points to note:
+
+1. Documentation is parsed as key value pairs
+2. Each @ represents a key. So @description designates the "description" key
+3. Text following the key on the same line and text on following lines before the next @ will be the value for that key
+4. Comments delimeted by // are not parsed so you can essentially separate your documentation comments
+from other inline comments that would best be suited for those scanning code instead of learning about your APIs.
+
+
+<pager></pager>
+
+
+@doc overview
+@id identifier
+@name Documentation Identifiers
+@description
+
+Take our previous example of documentation within a comment block.
+
+```js
+/**
+ * @doc function
+ * @name myModule.moduleSection:thisIsAFunction
+ *
+ * @description This function rules!
+ *
+ * This is still part of the description!!!
+ */
+```
+
+The <code>documentation identifier</code> in this example would be "@doc".
+
+The word "function" which comes right after "@doc" is the ``doctype``.
+The ``doctype`` in most cases tells Docular what rendering method to use, but don't worry about that right now, we'll get into that more later. Let's focus on the identifier attribute for now.
+
+The documentation identifier signifies the start of a new documentation object. It also tells Docular
+which <code>documentation plugin</code> should be used to parse, manipulate, and display the documentation.
+
+## @doc, The Default Documentation Identifier
+
+The default documentation identifier is "@doc". This triggers the use of the default documentation plugin which allows for basic support to group documentation into modules, and then within modules you can further group into <code>classes</code> and <code>globals</code>.  It gives a standard view of functions, methods, return values, and parameters.
+
+If you want more information on the specifics of the default @doc API {@link stuff go here!}.
+
+## @ngdoc, The AngularJS Documentation Identifier
+
+The "@ngdoc" identifier tells Docular to use the AngularJS plugin to parse, manipulate, and render your documentation. It supports different groupings within modules like <code>services</code>, <code>filters</code>, <code>directives</code>, and <code>types</code>.
+
+<div class="alert alert-info">All documentatio plugins inherit from the default @doc plugin</div>
+
+This means that the AngularJS documentation plugin inherits everything from the default documentation plugin including the ability to split docs into the classes module section.
+
+A sample of what an AngularJS doc would look like using "&#64;ngdoc" identifier would be:
+```js
+/**
+ * &#64;ngdoc service
+ * &#64;name myModule.service:myService
+ * &#64;description This is the best service ever!!
+ *
+ * ## No Really it's sweet!
+ */
+```
+
+The basis of the @doc plugin along with the additions of the @ngdoc plugin gives the final logic to parse, maniuplate, and display documentation just the way it is done on the {@link http://docs.angularjs.org/api/  AngulerJS documentation site}.
+
+If you want more info on the AngularJS @ngdoc API {@link http://docs.angularjs.org/api/ go here!}.
+
+## Other Documentation Plugins?
+
+Well, there aren't any yet, but if you are feeling frisky, you can certainly make your own. The documentation for creating a documentation plugin is {@link booyah here}. (not done yet)
+
+As new plugins become available they will have their own documentation identifier that must take the form "@doc-somename". So suppose I wanted to create my own plugin to parse, manipulate, and display documentation for PHP.  The plugin could specify that it's documentation identifier would be "@doc-php".  Then all documentation would be scanned and if the documentation section had an identifier of "@doc-php" it would use the API that results from the new plugin that inherited from the default "@doc" api.
+
+<pager></pager>
+
+
+@doc overview
+@id naming
+@name Naming and Ids
+@description
+
+Docular follows a basic naming convention for each document object. This naming convention helps you split up your documentation objects into <code>overviews</code>, <code>modules</code>, <code>module sections</code>, <code>items</code>, and <code>sub items</code>.
+
+## What's in a Name?
+
+Each document you create will eventually get a ``name`` and ``id`` after the parsing process. The ``id`` is the system id used and appears in the URL.  The ``name`` attribute is used most often within the ui as user friendly text.
+
+<div class="alert alert-warn">NOTE: It is not the "@name" key that determines the bucket your doc object goes into.</div>
+
+It is the "@id" value that is considered along with the doc type to determine which bucket your documentation object goes into.
+
+For convenience, especially for writing api documentation within scripts, the "@name" key value pair will be copied into the "@id" attribute. It is recommended to not specify an "@id" attribute within documentation for your APIs. The reason for this is because it is nice to see the ``name`` be the same as the ``id`` when it appears as the title within the ui for the doc.
+
+## The Two Main Buckets for Docs
+
+At the top level, there are two major bucket types:
+
+1. ``Overview`` : This bucket holds general documentation that lives outside of modules
+2. ``Module`` : This holds documentation relevant to a specific module
+
+
+## Putting Docs into the Overview Bucket
+
+First note that all the docs in this section of the tutorial are in the "overview" bucket. In the little nav area in the upper
+left hand corner you can see each of the docs in this section.
+
+To get a doc into the overview bucket for a documentation section, do this:
+
+```js
+/**
+ * @doc overview
+ * @id myId
+ * @name This is just a title
+ * @description Here is where I put all my
+ * crazy overview documentation.
+ *
+ * ## I can use markdown here!
+ */
+
+
+```
+
+The key part is the "@doc overview". The "overview" doctype tells Docular this doc is going into the general "overview" bucket regardless of what the "@id" or "@name" is.
+
+Notice here we specify an "@id" and a "@name". The "@name" is user friendly text shown in the UI, whereas the "@id" attribute becomes the system utilized id
+and shows up in the url. And again, having "@doc overview" is where the magic occurs to put this into a general "overview" bucket of documentation.
+
+It is possible to {@link sort sort these overview documentation objects} which is helpful for creating step by step documenation such as this tutorial.
+
+## Putting Docs into Modules
+
+Here is the default naming pattern:
+
+``module`` ``.`` ``module section`` ``:`` ``item`` ``.`` ``sub-item``
+
+Module and module section patterns are mostly self explanatory so we should dicuss item and sub-item a bit more in depth. First note that ``sub-item`` is optional. It gives you one more level of grouping and relationship. A good way to use this extra grouping would be to create a base element and then extend it. So your base element would be ``item`` and your extensions would be ``sub-item``. Of course it is really up to you what conventions you want to you use!
+
+So in general the combination of ``item`` or ``item`` ``.`` ``sub-item``, could just be considered the unique id for this object within the ``module`` and ``module section``.
+
+### Examples
+
+Here are a few examples of sticking docs into the "itemView" module within different module sections like "service", "factory", "global", and "directive":
+
+1. @name itemView.service:items
+2. @name itemView.factory:user
+3. @name itemView.global:parseUsers
+4. @name itemView.directive:input
+5. @name itemView.directive:input.checkbox
+6. @name itemView.directive:input.select
+
+<div class="alert alert-info"><i class="icon-thumbs-up"></i> REMEMBER! You are actually encouraged to only use the @name attribute to store the "id" and it will automatically populate into the "@id" field during parsing</div>
+
+## <i class="icon-camera"></i> Picture This
+
+Here is a picture with labels that indicate the different parts of the naming pattern for {@link /documentation/angular/api/ng.directive:input.checkbox AngularJS Input CheckBox Directive} and how they are represented in the UI:
+
+&#64;name ``ng`` ``.`` ``directive`` ``:`` ``input`` ``.`` ``checkbox``
+
+<img src="/resources/img/docular/module_sections.png"/>
+
+For another example, the "input" directive right above the "input.checkbox" directive would simply be:
+
+&#64;name ``ng`` ``.`` ``directive`` ``:`` ``input``
+
+## WARNING : The @ngdoc Documentation Plugin is a Cheater
+
+So the naming convention above is what should generally be followed, however AngularJS has additional conventions that are enforced that do not follow the typical naming conventions but that still do put their document objects into modules and module-sections.
+
+For instance, `@name ng.$anchorScroll` looks incomplete, but extra rules in the documentation plugin see the dollar sign ( `$` ) and automatically assume that this is a service and turn it into `@name ng.service:$anchorScroll`.
+
+Feel free to take advantage of this if you please or just stick the naming convention mentioned above.
+
+
+<pager></pager>
+
+
+@doc overview
+@id fields
+@name Basic Documentation Fields
+@description
+
+<pager></pager>
+
+
+@doc overview
+@id modules
+@name Creating Modules
+@description
+
+<pager></pager>
+
+
+@doc overview
+@id sections
+@name Module Sections
+@description
+
+<pager></pager>
+
+
+@doc overview
+@id types
+@name Documentation Types
+@description
+
+<pager></pager>
+
+
+@doc overview
+@id children
+@name Nested Documentation
+@description
+
+<pager></pager>

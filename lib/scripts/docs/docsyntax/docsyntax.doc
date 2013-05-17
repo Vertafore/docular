@@ -1,0 +1,42 @@
+@doc overview
+@id index
+@name
+@description
+
+#"Doc" and Overview Syntax
+
+Follow this overview to familiarize yourself with the syntax you can use to recreate overview sections and other documentation defined outside of comment blocks.
+
+<page-list></page-list>
+
+
+@doc overview
+@id blockdef
+@name Documentation Blocks
+@description
+
+<pager></pager>
+
+
+@doc overview
+@id overview
+@name Creating Overview Docs
+@description
+
+<pager></pager>
+
+
+@doc overview
+@id overviewindex
+@name Creating Overview Index
+@description
+
+<pager></pager>
+
+
+@doc overview
+@id links
+@name Linking to other Docs
+@description
+
+<pager></pager>
