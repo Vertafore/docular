@@ -210,17 +210,15 @@ utils.makeUncooler = function (string_in) {
 
 ```
 
-<a href="documentation/example/globals/index" class="btn btn-primary btn-large"> View The Rendered Results! </a>
+## Check out the results
+
+<a href="documentation/example/globals/index" class="btn btn-large btn-primary"> View The Rendered Results! </a>
+
+## What's Next?
+
+Now you have {@link firstdoc created your first document} so it's time to learn the details of embedding documentation in your files.
+
+<a class="btn btn-primary btn-large" href="/documentation/docular/embed/index">Embedding Documentation</a>
 
 <pager></pager>
 
-
-
-@doc overview
-@id syntax
-@name Intro to Syntax
-@description
-
-Now you have {@link firstdoc created your first document} so it's time to learn the details of the documentation syntax. Syntax deserves it's own section so let's click over to learn more.
-
-<a class="btn btn-primary btn-large" href="/documentation/docular/apisyntax/index">Documentation Syntax</a>
