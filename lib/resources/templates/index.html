@@ -93,6 +93,7 @@
             /*=========== BEHAVIOR/LIBRARIES ============*/
 
             addTag('script', {src: path('/resources/js/jquery.min.js')}, sync);
+            addTag('script', {src: path('/resources/js/jquery.goto.js')}, sync);
             addTag('script', {src: path('/resources/js/jquery.cookie.js')}, sync);
             addTag('script', {src: path('/resources/angular/angular.js')}, sync);
             addTag('script', {src: path('/resources/angular/angular-resource.js') }, sync);
@@ -175,6 +176,13 @@
 
         <div class="row clear-navbar"></div>
 
+        <div class="row hide-source-container" ng-show="mode == 'show-source'" class="hide-source-container">
+            <div class="span12">
+                <hide-source></hide-source>
+                <div ng-bind-html-unsafe="currentSourceContent"></div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="span12">
                 <!--[if lt IE 7]>
@@ -204,7 +212,9 @@
         <!-- HERE IS THE BASE MARKUP FOR WHEN DOCUMENTATION IS BEING SHOWN -->
         <div class="row" ng-show="mode == 'documentation'">
             <div class="span3">
+
                 <form class="well form-search" ng-submit="submitForm()">
+
                     <div class="dropdown search" ng-class="{open: focused && bestMatch.rank > 0 && bestMatch.page != currentPage}">
                         <input type="text" ng-model="search" placeholder="search the docs" tabindex="1" accesskey="s" class="input-medium search-query" focused="focused">
                         <ul class="dropdown-menu">
@@ -263,6 +273,8 @@
                 </ul>
 
                 <div id="loading" ng-show="loading">Loading...</div>
+
+                <view-source ng-hide="loading"></view-source>
 
                 <div ng-hide="loading" ng-include src="currentPage.partialUrl" onload="afterPartialLoaded()" autoscroll class="content"></div>
 
