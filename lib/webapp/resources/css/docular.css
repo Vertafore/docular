@@ -15,16 +15,24 @@ img.docular-small {width: 95px; height: 25px; }
 /*============ VIEW SOURCE ============*/
 
 .view-source {margin-bottom:5px; text-align:right; float:right; margin-top:2px;}
-.view-source .btn i {display:none !important;}
-.view-source.loading .btn i {display: inline-block !important;}
+.view-source .btn i.icon-spin {display:none !important;}
+.view-source .btn i.icon-file {font-size:27px; margin-right:5px;}
+.view-source.loading .btn i.icon-spin {display: inline-block !important;}
+.view-source.loading .btn i.icon-eye-open {display:none !important;}
 .prettyprint.linenums li.highlight {background: #DDEEFF; margin-right: -8px;}
 .prettyprint ol.linenums li {text-shadow: 0 1px 2px #fff;}
-.hide-source {position:fixed; margin-top:0px; margin-left: 445px;}
+.hide-source {position:fixed; margin-top:0px; margin-left: 0px;}
 .prettyprint.plain-text * {color:#006992;}
-.btn.source-file {background: none; width: 485px; text-align: right; overflow: hidden; padding:4px;}
+.btn.source-file {
+    background: #f2f2f4;  width: 929px; text-align: left; overflow: hidden; padding:4px; padding-left:7px; margin-left:-1px; cursor:default;
+    box-shadow: 0px 1px 11px #ccc;
+}
 .source-file .btn {margin-left:10px;}
-.source-file:hover {background: none;}
+.source-file * {vertical-align: middle;}
+.source-file:hover, .source-file:active {background: #f2f2f4; opacity:1.0;}
 .hide-source-container .prettyprint {margin-top: 59px;}
+.hide-source .btn {float:right;}
+.source-url {font-size: 15px; color: #333; text-shadow: 1px 1px 1px #fff;}
 
 /*============ KEYWORD SEARCH STYLING ============*/
 
