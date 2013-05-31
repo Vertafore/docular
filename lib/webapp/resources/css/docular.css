@@ -16,13 +16,13 @@ img.docular-small {width: 95px; height: 25px; }
 
 .view-source {margin-bottom:5px; text-align:right; float:right; margin-top:2px;}
 .view-source .btn i.icon-spin {display:none !important;}
-.view-source .btn i.icon-file {font-size:27px; margin-right:5px;}
+.view-source .btn i.icon-file {font-size:27px; margin-right:5px; text-shadow: 0px 1px 2px #0088cc;}
 .view-source.loading .btn i.icon-spin {display: inline-block !important;}
 .view-source.loading .btn i.icon-eye-open {display:none !important;}
 .prettyprint.linenums li.highlight {background: #DDEEFF; margin-right: -8px;}
 .prettyprint ol.linenums li {text-shadow: 0 1px 2px #fff;}
 .hide-source {position:fixed; margin-top:0px; margin-left: 0px;}
-.prettyprint.plain-text * {color:#006992;}
+.prettyprint.lang-doc * {color:#006992;}
 .btn.source-file {
     background: #f2f2f4;  width: 929px; text-align: left; overflow: hidden; padding:4px; padding-left:7px; margin-left:-1px; cursor:default;
     box-shadow: 0px 1px 11px #ccc;
@@ -70,6 +70,8 @@ img.docular-small {width: 95px; height: 25px; }
 .nav li.nav-header .module-visibility i {margin-right:0px; width:auto;}
 .nav li.nav-header.module a.module-name {margin-left:2px; margin-right:2px; padding-left:4px;}
 .nav li.nav-header.module a.module-name:hover {text-shadow: 1px 1px 1px #fff;}
+.nav-highlight {color:#ccc;}
+.navbar .nav>.nav-highlight:hover>a, .navbar .nav>.nav-highlight:hover>i {color:#fff; text-shadow:0px 0px 10px #0088cc;}
 
 .overview-items {padding:10px 0px 6px 0px; border-radius:5px; -moz-border-radius:5px; background:#fff; margin-bottom:20px; box-shadow: 0px 0px 5px #AAA; }
 .overview-items li {margin-bottom:4px;}
