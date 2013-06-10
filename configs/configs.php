@@ -1,0 +1,1 @@
+<?php $configs= json_decode('{"github":{"client_id":"b586832d3e7bc1f6eaad","client_secret":"ebbb113343dba77e5f1feafd8e236c1b071196ff"}}', true); ?>

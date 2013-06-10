@@ -1,0 +1,95 @@
+<h1><code ng:non-bindable="">Customize the Homepage and other Partials</code>
+<span class="hint"></span>
+</h1>
+<div><ul class="properties">
+    <li>
+        <h3 id="annotate">docular_partial_home {string}</h4>
+        <div class="annotate">
+            <p>Provides a url relative to the root of the grunt-docular plugin which points to an html "partial" file. This is a file that contains valid html that does not contain the html, head, or body elements.</p>
+        </div>
+        <h4>Availible Directives</h4>
+        <p>
+            The homepage partial has access to the following directives:
+            <ul>
+                <li>
+                    &lt;documentation-section-list group="{string} optional group filter" header="{boolean} show title" &gt;&lt;/documentation-section-list&gt;
+                </li>
+            </ul>
+        </p>
+        <h4>Example</h2>
+        <p>The configuration for <a href="http://grunt-docular.com">grunt-docular.com</a></p>
+        <pre class="prettyprint linenums lang-js">module.exports = function(grunt) {
+
+    // Project configuration.
+    grunt.initConfig({
+
+        pkg: grunt.file.readJSON('package.json'),
+
+        docular: {
+            // other options ommitted for simplicity
+            docular_partial_home: 'home.html'
+        }
+
+    });
+
+    // Load the plugin that provides the "docular" tasks.
+    grunt.loadNpmTasks('grunt-docular');
+
+    // Default task(s).
+    grunt.registerTask('default', ['docular']);
+
+};
+</pre>
+        <p>This site <a href="http://grunt-docular.com">grunt-docular.com</a> uses the following for it's homepage:
+<pre class="prettyprint linenums lang-doc">&lt;div class="span3"&gt;
+
+    &lt;documentation-group-list&gt;&lt;/documentation-group-list&gt;
+
+&lt;/div&gt;
+
+&lt;div class="span9"&gt;
+
+    &lt;h1&gt;&lt;i class="icon-rocket" style="color:#ff8900;"&gt;&lt;/i&gt; Documentation... and Beyond!&lt;/h1&gt;
+
+    &lt;p&gt;
+        Docular is a NodeJS package that is based on AngularJS's documentation generation implementation. Docular is best used through the Grunt plugin "&lt;a href="https://npmjs.org/package/grunt-docular" target="_blank"&gt;grunt-docular&lt;/a&gt;".
+    &lt;/p&gt;
+
+    &lt;div class="alert alert-warn"&gt;&lt;i class="icon-beaker"&gt;&lt;/i&gt; Docular is currently in Beta&lt;/div&gt;
+
+    &lt;h2&gt;Wahooo! Docular is almost out of Beta!&lt;/h2&gt;
+
+    &lt;p&gt;
+        Documentation is almost complete, and a final list of features for the first release have been identified. Stay tuned!
+    &lt;/p&gt;
+
+    &lt;a href="https://github.com/gitsome/docular/issues?state=open" target="_blank" class="btn "&gt;Suggest a Feature / Report a Bug&lt;/a&gt;
+
+    &lt;h2&gt;&lt;i class="icon-flag" style="color:#555;"&gt;&lt;/i&gt; Get Started &lt;/h2&gt;
+    &lt;documentation-section-list group="docular" header="false"&gt;&lt;/documentation-section-list&gt;
+
+    &lt;h2&gt;&lt;i class="icon-file-alt" style="color:#555;"&gt;&lt;/i&gt; Documentation Samples&lt;/h2&gt;
+    &lt;p&gt;
+        This entire site was generated through Docular, so anything you see here can be recreated using Docular.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+        Browse around the site and be sure to check out the AngularJS source documention and Docular source to see how you can customize your own documentation experience.
+    &lt;/p&gt;
+
+    &lt;h2&gt;&lt;i class="icon-code-fork" style="color:#555;"&gt;&lt;/i&gt; Docular Uses:&lt;/h2&gt;
+
+    &lt;div class="row-fluid shout-outs"&gt;
+        &lt;div class="span12"&gt;
+            &lt;a href="http://gruntjs.com/" target="_blank" alt="gruntJS"&gt;&lt;img src="/resources/img/grunt.png"/&gt;&lt;/a&gt;
+            &lt;a href="http://angularjs.org/" target="_blank" alt="angularJS"&gt;&lt;img src="/resources/img/angular.png"/&gt;&lt;/a&gt;
+            &lt;a href="http://nodejs.org/" target="_blank" alt="nodeJS"&gt;&lt;img src="/resources/img/node.png"/&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>
+    </li>
+</ul>
+
+<p><pager></pager></p></div>
