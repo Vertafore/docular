@@ -1,7 +1,7 @@
 
 /*============ DISQUS ============*/
 
-.disqus {padding:10px 20px; box-shadow:0px 0px 4px #ccc; -moz-border-radius:10px; border-radius:10px; margin-top:40px; margin-bottom:60px;}
+.disqus {padding:10px 20px; box-shadow:0px 0px 4px #ccc; -moz-border-radius:10px; border-radius:10px; margin-top:70px; margin-bottom:60px;}
 
 
 /*============ GENERAL PAGE LAYOUT ============*/
@@ -170,6 +170,7 @@ img.docular-small {width: 95px; height: 25px; }
   color: gray;
 }
 
+
 /*============ BREADCRUMBS ============*/
 
 ul.breadcrumb {position:relative; padding:0px;}
@@ -215,7 +216,25 @@ ul.breadcrumb li:first-child:hover a {text-decoration: none;}
 ul.breadcrumb li:first-child a {text-shadow:-1px -1px 1px #fff;}
 ul.breadcrumb li:first-child .divider {display:none;}
 
+
 /*============ DOCUMENTATION STYLING ============*/
+
+.content {
+    -webkit-transition: 300ms linear all; /* Safari/Chrome */
+    -moz-transition: 300ms linear all; /* Firefox */
+    -ms-transition: 300ms linear all; /* IE10 */
+    -o-transition: 300ms linear all; /* Opera */
+    transition: 300ms linear all; /* Future Browsers */
+    opacity:1;
+}
+.documentation-loading .content {
+    -webkit-transition: 5ms linear all; /* Safari/Chrome */
+    -moz-transition: 5ms linear all; /* Firefox */
+    -ms-transition: 5ms linear all; /* IE10 */
+    -o-transition: 5ms linear all; /* Opera */
+    transition: 5ms linear all; /* Future Browsers */
+    opacity:0.5;
+}
 
 .hero-unit {padding:40px;}
 .content .hero-unit h1 {font-size:50px; line-height:50px; margin-bottom:0px;}
@@ -240,6 +259,7 @@ ul.breadcrumb li:first-child .divider {display:none;}
 .content .methods h1 {font-size:22px;}
 .content .center {display: block; margin: 0 auto 2em auto;}
 .content .diagram {display: block; margin: 2em auto;}
+
 
 /*============ HOME STYLING ============*/
 

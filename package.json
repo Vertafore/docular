@@ -44,7 +44,9 @@
     "colors": "*",
     "q-fs": "*",
     "qq": "*",
-    "node.extend": "*"
+    "node.extend": "*",
+    "express": "*",
+    "request": "*"
   },
   "keywords": [
     "angular",
