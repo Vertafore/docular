@@ -220,11 +220,11 @@ ul.breadcrumb li:first-child .divider {display:none;}
 /*============ DOCUMENTATION STYLING ============*/
 
 .content {
-    -webkit-transition: 300ms linear all; /* Safari/Chrome */
-    -moz-transition: 300ms linear all; /* Firefox */
-    -ms-transition: 300ms linear all; /* IE10 */
-    -o-transition: 300ms linear all; /* Opera */
-    transition: 300ms linear all; /* Future Browsers */
+    -webkit-transition: 200ms linear all; /* Safari/Chrome */
+    -moz-transition: 200ms linear all; /* Firefox */
+    -ms-transition: 200ms linear all; /* IE10 */
+    -o-transition: 200ms linear all; /* Opera */
+    transition: 200ms linear all; /* Future Browsers */
     opacity:1;
 }
 .documentation-loading .content {
