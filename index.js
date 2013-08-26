@@ -22,7 +22,7 @@ module.exports = {
         var command_gen_docs = 'node ' + serverScript + port;
 
         //determine the working directory for this command (this script could be being called from grunt plugin)
-        var workingDirectory = path.relative(process.cwd(), __dirname + '/lib/webapp/');
+        var workingDirectory = path.relative(process.cwd(), gen_docs.workingWebappFolder);
 
         exec(command_gen_docs, {cwd: workingDirectory}, function(err, stdout, stderr) {
             //bubble up errors that may come from this process and call the callback
