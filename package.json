@@ -43,6 +43,7 @@
     "docular-doc-api-angular": "*",
     "colors": "*",
     "q-fs": "*",
+    "q-io":"1.9.4",
     "qq": "*",
     "node.extend": "*",
     "express": "*",

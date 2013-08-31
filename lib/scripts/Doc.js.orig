@@ -271,6 +271,7 @@ Doc.prototype = {
         var match;
 
         //for each NEW_LINE scan for key value pairs proccess each key value pair
+<<<<<<< HEAD
         var allLines;
         try {
             allLines = self.text.split(NEW_LINE);
@@ -280,6 +281,9 @@ Doc.prototype = {
 
         allLines.forEach(function(line){
 
+=======
+        self.text.split(NEW_LINE).forEach(function(line){
+>>>>>>> e50bd65df11247365a47deb348ed1433e7354b49
             // we found @parsekey...
             if ((match = line.match(/^\s*@((\w+)(-(\w+))*)(\s+(.*))?/))) {
                 // then we have collected all attributes from the previous element so flush it
