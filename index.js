@@ -13,20 +13,22 @@ module.exports = {
 
     },
 
-    server: function(port, callBack) {
+    server: function(options, callBack) {
 
+        var options = options || {};
         var callBack = callBack || noop;
 
-        //Run the gen-docs script
-        var serverScript = '../nodeserver/server.js ';
-        var command_gen_docs = 'node ' + serverScript + port;
-
         //determine the working directory for this command (this script could be being called from grunt plugin)
-        var workingDirectory = path.relative(process.cwd(), gen_docs.workingWebappFolder());
+        var workingDirectory = process.cwd() + '/' + path.relative(process.cwd(), gen_docs.workingWebappFolder(options.docular_webapp_target));
+
+        //Run the gen-docs script
+        var ABS_SERVER_SCRIPT = __dirname + '/lib/nodeserver/server.js';
+        var REL_SERVER_SCRIPT = path.relative(workingDirectory, ABS_SERVER_SCRIPT);
+        var command_gen_docs = 'node ' + REL_SERVER_SCRIPT + ' ' + options.port;
 
         exec(command_gen_docs, {cwd: workingDirectory}, function(err, stdout, stderr) {
             //bubble up errors that may come from this process and call the callback
-            console.log(stdout);
+            console.log(stdout, err, stderr);
             callBack();
         });
     }

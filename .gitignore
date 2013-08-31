@@ -7,6 +7,7 @@ lib/nodeserver/configs/*
 lib/webapp/controller/*
 lib/webapp/configs/*
 lib/webapp/resources/docular-partials/*
+lib/generated/
 index.html
 node_modules/*
 
