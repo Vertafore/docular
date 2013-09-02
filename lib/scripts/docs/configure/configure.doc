@@ -724,6 +724,56 @@ module.exports = function(grunt) {
 
 
 @doc overview
+@id docular-webapp-target
+@name Webapp Target
+@description
+
+<ul class="properties">
+    <li>
+        <h3 id="annotate">docular_webapp_target {string}</h3>
+        <div class="annotate">
+            <p>A string relative to current location of the Gruntfile.js file that indicates where the webapp files should be generated. This is the entire webapp with all the generated partials.</p>
+        </div>
+    </li>
+</ul>
+
+## Defaults
+
+If you do not provide the docular_webapp_target configuration, then the webapp will be generated in a target directory that lives within the Docular node_module. This is fine if you wish to simply view your documentation locally using the grunt docular-server command.
+
+Note that the grunt docular-server command will look for this configuration in the Docular grunt configurations. There for the node server can be started within the context of your specified target.
+
+Currently, the entire directory get's rewritten. We hope to soon allow you to edit files within the target directory without them being blown away. Stay tuned!
+
+```js
+module.exports = function(grunt) {
+
+    // Project configuration.
+    grunt.initConfig({
+
+        pkg: grunt.file.readJSON('package.json'),
+
+        docular: {
+            // other options ommitted for simplicity
+            docular_webapp_target : "my-documentation"
+        }
+
+    });
+
+    // Load the plugin that provides the "docular" tasks.
+    grunt.loadNpmTasks('grunt-docular');
+
+    // Default task(s).
+    grunt.registerTask('default', ['docular']);
+
+};
+```
+
+<pager></pager>
+
+
+
+@doc overview
 @id ui
 @name Inject Styles and Behavior
 @description
