@@ -25,7 +25,7 @@ So putting inline documentation within your script files can get a little unruly
 // This gives additional info not already provided by good coding practices ;-)
 ```
 
-When these conventions are followed, you can then hide all comment blocks a the downloadednd keep all single line comments visible during development!
+When these conventions are followed, you can then hide all comment blocks and keep all single line comments visible during development!
 
 ##Sublime Time
 
