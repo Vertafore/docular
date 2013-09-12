@@ -5,7 +5,8 @@
 #Docular
 
 > Extensible Documentation Generation Based on AngularJS's Documentation Generation
-> NOTE: NodeJS has access to your filesystem so please proceed with caution. I will not be held responsible for side effects of bad code or malitious docular extensions.
+
+> NOTE: NodeJS has access to your filesystem so please proceed with caution. I will not be held responsible for side effects of bad code or malicious docular extensions.
 
 #Grunt Plugin For Docular: "grunt-docular"
 
@@ -49,15 +50,15 @@ grunt.initConfig({
 ```
 
 ### Options
-``baseURL`` (Type: `string`, default: `""`): Angular uses the <base> tag to designate the baseUrl for an app. This is helpful for helping resolve routes and location through the $location service
+``baseURL`` (Type: `string`, default: `""`): Angular uses the <base> tag to designate the baseUrl for an app. This helps resolve routes and location through the $location service
 
 ``showAngularDocs`` (Type: `boolean`, default: `false`): The angular source is included in the docular package so it can be parsed and rendered to both help test the docular package and provide angular documentation for apps that use it.
 
-``showDocularDocs`` (Type: `boolean`, default: `false`): Setting this to true will have docular parse and render the documentation for the docular plugin itself. This is helpful for developers to understand the default doc api (docular-doc-api-doc) to help them create their own docular api extensions.
+``showDocularDocs`` (Type: `boolean`, default: `false`): Setting this to true will have docular parse and render the documentation for the docular plugin itself. This is helpful for developers to understand the default doc api (docular-doc-api-doc) to aid them in creating their own docular api extensions.
 
-``docAPIOrder`` (Type: `array [string]`, default: `['doc', 'angular']`): For each docular api extension, we need to know which order to include the UI scripts and CSS due to overrides etc..
+``docAPIOrder`` (Type: `array [string]`, default: `['doc', 'angular']`): For each docular api extension we need to know the order to include the UI scripts and CSS due to overrides etc..
 
-``groups`` (Type: `array [group object]`, default: `[]`): This is an array of group objects. Groups have their own api but generally consists of some meta data and lists of files that need to be parsed and rendered for documentation. For more check out
+``groups`` (Type: `array [group object]`, default: `[]`): This is an array of group objects. Groups have their own api, but generally consists of some metadata and lists of files that need to be parsed and rendered for documentation. For more check out
 
 ### Groups
 Group configurations for Angular and the docular documentation are stored and pushed into all groups if you set the showAngularDocs and showDocularDocs options to true. These configurations are identical to what you would use to configure docular to parse and render your own documentation.
