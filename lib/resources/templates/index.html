@@ -48,7 +48,8 @@
 
             /*============ INITIALIZATION =============*/
 
-            var baseURL = "/" + configureBaseUrl();
+            var resolvedBaseUrl = configureBaseUrl();
+            var baseURL = resolvedBaseUrl ? "/" + resolvedBaseUrl : "";
 
             var path = function(name) {
                 if (production) {
