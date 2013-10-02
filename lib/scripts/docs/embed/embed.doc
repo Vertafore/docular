@@ -110,6 +110,8 @@ Here is an example of Docular documentation within a "doc" file:
 
 ```
 
+<div class="alert alert-success"><i class="icon-thumbs-up"></i> Yay, the "@description" field will be passed through a markdown filter which will help simplify and unify your documentation</div>
+
 ## Summary
 
 So here are a few points to note:
