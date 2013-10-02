@@ -9,6 +9,7 @@ lib/webapp/configs/*
 lib/webapp/resources/docular-partials/*
 lib/generated/
 index.html
+node_modules
 node_modules/*
 
 
