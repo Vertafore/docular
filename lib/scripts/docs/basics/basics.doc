@@ -326,7 +326,7 @@ This means, if you want to stick your "booyah" document in the "carl" module and
 &#64;name carl.filter:booyah
 ```
 
-#### Defualt Sections for the "@doc" default documentation plugin:
+#### Default Sections for the "@doc" default documentation plugin:
 
 ```js
 &#64;name moduleName.global
@@ -336,7 +336,7 @@ This means, if you want to stick your "booyah" document in the "carl" module and
 &#64;name moduleName.class
 ```
 
-#### Defualt Sections for the "@ngdoc" documentation plugin:
+#### Default Sections for the "@ngdoc" documentation plugin:
 
 ```js
 &#64;name moduleName.directive
