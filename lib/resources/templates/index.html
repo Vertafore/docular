@@ -12,6 +12,7 @@
         content="Docular, grunt-docular, jsdoc, yuidoc, angular, angular documentation, generation, markdown">
     <meta name="fragment" content="!">
     <title ng-bind-template="Docular: {{partialTitle}}">Docular</title>
+	<base href="#BASE_URL#"/>
 
     <script type="text/javascript">
 
@@ -71,8 +72,6 @@
             /*============ HERE WE LOAD THE CONFIGURABLE BASEURL ============*/
 
             addTag('script', {src: 'documentation/docular-configuration.js'}, sync);
-
-            //addTag('base', {href: baseURL});
 
 
             /*============ ADD ALL THE BASE STYLING  =============*/
