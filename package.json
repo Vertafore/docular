@@ -47,7 +47,8 @@
     "q": "*",
     "node.extend": "*",
     "express": "*",
-    "request": "*"
+    "request": "*",
+    "fs-extra":"*"
   },
   "keywords": [
     "angular",
