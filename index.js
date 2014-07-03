@@ -7,7 +7,7 @@ var noop = function(){};
 module.exports = {
 
     genDocs: function (options, callBack) {
-
+		console.log(options)
         var callBack = callBack || noop;
         gen_docs.generate(options, callBack);
 
