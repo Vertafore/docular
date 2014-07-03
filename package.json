@@ -45,7 +45,7 @@
     "q-fs": "*",
     "q-io":"1.9.4",
     "q": "*",
-    "node.extend": "*",
+    "node.extend": "3.x",
     "express": "*",
     "request": "*"
   },
