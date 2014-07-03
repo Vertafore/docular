@@ -45,8 +45,8 @@
     "q-fs": "*",
     "q-io":"1.9.4",
     "q": "*",
-    "node.extend": "3.x",
-    "express": "*",
+    "node.extend": "*",
+    "express": "3.x",
     "request": "*"
   },
   "keywords": [
