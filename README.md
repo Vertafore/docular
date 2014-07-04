@@ -231,7 +231,7 @@ module.exports = function(grunt) {
 ### Run the grunt-docular tasks
 Now within your docular-test project, run grunt to compile the Angular and Docular source:
 ```shell
-grunt docular // you can also do "grunt" beaucse we set up "docular" as the default
+grunt docular // you can also do "grunt" because we set up "docular" as the default
 ```
 
 Now start up the NodeJS server so you can view the documentation:
