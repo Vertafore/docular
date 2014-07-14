@@ -20,9 +20,36 @@
         // before the base attribute is added, causing 404 and terribly slow loading of the docs app.
         (function() {
 
+            var resourcesAttribs = {
+                "href": true,
+                "src": true
+            }
+
             /*============ INITIALIZATION =============*/
 
-            var baseURL = '/'
+            function getIndexFileName(url){
+                return (url.match(/\/(index[^\.]*\.html)/) || ['', ''])[1];
+            }
+
+            function configureBaseUrl(){
+                var baseUrl = location.pathname,
+                    urlParts,
+                    lastUrlPart;
+
+                urlParts = baseUrl.split("/");
+                lastUrlPart = urlParts[urlParts.length-1];
+
+                if (!lastUrlPart || "index.html" === lastUrlPart) {
+                    return (urlParts[urlParts.length-2]) || "";
+                } else {
+                    return lastUrlPart || ""; 
+                }
+            }
+
+            /*============ INITIALIZATION =============*/
+
+            var resolvedBaseUrl = configureBaseUrl();
+            var baseURL = resolvedBaseUrl ? "/" + resolvedBaseUrl : "";
 
             var path = function(name) {
                 if (production) {
@@ -35,10 +62,19 @@
             window.addTag = function (name, attributes, sync) {
                 var el = document.createElement(name),
                     headEl = document.getElementsByTagName('head')[0],
-                    attrName;
+                    attrName,
+                    attrValue;
+
+                function isResourcePath(attribute) {
+                    return resourcesAttribs[attribute];
+                }
 
                 for (attrName in attributes) {
-                  el.setAttribute(attrName, attributes[attrName]);
+                  attrValue = attributes[attrName];
+                  if ( isResourcePath(attrName)) {
+                    attrValue = baseUrl + attrValue;
+                  }
+                  el.setAttribute(attrName, attrValue);
                 }
                 sync ? document.write(outerHTML(el)) : headEl.appendChild(el);
             };
@@ -55,9 +91,9 @@
                     })(node);
             };
 
-            var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
+            var indexFile = getIndexFileName(location.pathname),
                 rUrl = /(#!\/|api|guide|misc|tutorial|cookbook|index[^\.]*\.html).*$/,
-                baseUrl = location.href.replace(location.pathname, ''),
+                baseUrl = baseURL,
                 jQuery = true,
                 debug = /index[^\.]*-debug\.html$/.test(baseUrl) && 3==7,
                 production = (location.hostname === 'docs.angularjs.org' && 3==9),
