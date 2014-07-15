@@ -1,5 +1,5 @@
 <div class="row" ng-class="loadingClass()">
-    <div class="col-lg-3" id="documentation_page">
+    <div class="col-sm-3" id="documentation_page">
 
         <form class="well form-search" ng-submit="submitForm()">
 
@@ -19,7 +19,7 @@
 
             <!-- here we just render regular pages -->
             <div class="overview-items" ng-show="pages.length">
-                <ul class="nav nav-list" ng-hide="page">
+                <ul class="nav nav-list">
                     <li ng-repeat="page in pages" ng-class="navClass(page)">
                         <a href="{{page.url}}" tabindex="2">{{page.shortName}}</a>
                     </li>
@@ -53,7 +53,7 @@
         </form>
     </div>
 
-    <div class="col-lg-9">
+    <div class="col-sm-9">
 
         <ul class="breadcrumb">
             <li ng-repeat="crumb in breadcrumb">
@@ -63,10 +63,10 @@
             </li>
         </ul>
 
-        <view-source></view-source>
+        <button ng-if="currentSource.source.contentURL" class="view-source btn btn-primary" ng-click="showSourceCode()"><i class="icon-eye-open"></i> view source</button>
 
-        <div ng-include src="page.partialUrl" autoscroll class="content"></div>
-
+        <div ng-if="!showSource" ng-include src="page.partialUrl" autoscroll class="content"></div>
+        <source-viewer source="source" file-type="fileType" ng-if="!!showSource"></source-viewer>
         <div id="disqus" class="disqus" ng-show="discussionsEnabled">
             <h2>Discussion</h2>
             <div id="disqus_thread" class="content-panel-content"></div>

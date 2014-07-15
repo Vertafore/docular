@@ -89,6 +89,8 @@
             /*=========== LOAD DOC API UI_RESOURCES FOR STYLING ===========*/
 
             addTag('link', {rel: 'stylesheet', href: '/resources/doc_api_resources/doc_api.css', type: 'text/css'});
+            addTag('link', {rel: 'stylesheet', href: '/resources/libraries/syntaxhighlighter/styles/shCore.css', type: 'text/css'});
+            addTag('link', {rel: 'stylesheet', href: '/resources/libraries/syntaxhighlighter/styles/shThemeEclipse.css', type: 'text/css'});
 
 
             /*=========== BEHAVIOR/LIBRARIES ============*/
@@ -102,17 +104,24 @@
             addTag('script', {src: path('/resources/angular/angular-resource.js') }, sync);
             addTag('script', {src: path('/resources/angular/angular-cookies.js') }, sync);
             addTag('script', {src: path('/resources/angular/angular-sanitize.js') }, sync);
-
-
+            
+            addTag('script', {src: path('/resources/libraries/syntaxhighlighter/scripts/shCore.js')}, sync);
+            addTag('script', {src: path('/resources/libraries/syntaxhighlighter/scripts/shAutoloader.js')}, sync);
+            addTag('script', {src: path('/resources/libraries/syntaxhighlighter/scripts/shBrushJScript.js')}, sync);
+            addTag('script', {src: path('/resources/libraries/syntaxhighlighter/scripts/shBrushXml.js')}, sync);
+            addTag('script', {src: path('/resources/libraries/syntaxhighlighter/scripts/shBrushSass.js')}, sync);
+            addTag('script', {src: path('/resources/libraries/syntaxhighlighter/scripts/shBrushRuby.js')}, sync);
+            addTag('script', {src: path('/resources/libraries/syntaxhighlighter/scripts/shBrushJava.js')}, sync);
+            
+            
             /*============ DEFINE THE APPLICATION MODULE =============*/
 
             addTag('script', {src: '/resources/js/docs_module_begin.js'}, sync);
-			addTag('script', {src: '/resources/js/controllers/index.js'}, sync);
-			addTag('script', {src: '/resources/js/directives/index.js'}, sync);
-			addTag('script', {src: '/resources/js/services/index.js'}, sync);
-			
-			addTag('script', {src: '/resources/js/directives/doc.js'}, sync);
-			addTag('script', {src: '/resources/js/services/doc.js'}, sync);
+            addTag('script', {src: '/resources/js/controllers/index.js'}, sync);
+            addTag('script', {src: '/resources/js/directives/index.js'}, sync);
+            addTag('script', {src: '/resources/js/services/index.js'}, sync);
+
+            addTag('script', {src: '/resources/js/directives/doc.js'}, sync);
 
 
             /*============ LOAD DOC API UI_RESOURCES FOR MODULE EXTENSIONS =============*/
@@ -206,7 +215,8 @@
             </div>
         </div>
     </div>
-
+    
+    
     <footer class="footer" ng-include src="'resources/docular-partials/docular_partial_footer.html'"></footer>
 
 </body>

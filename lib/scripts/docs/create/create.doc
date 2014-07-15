@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 
 That's it for creating a group. The only things needed are some identifiers and an icon to help distinguish it from other groups. Now it is time to create your first section that will actually point to your documentation files.
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 
@@ -121,7 +121,7 @@ module.exports = function(grunt) {
 
 <div class="alert">WARNING: Make sure you understand the {@link docularconfigure/sections#docsnscripts difference between scripts and docs}</div>
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 
@@ -220,5 +220,5 @@ Now you have {@link firstdoc created your first document} so it's time to learn 
 
 <a class="btn btn-primary btn-large" href="/documentation/docular/embed/index">Embedding Documentation</a>
 
-<pager></pager>
+<docular-pager></docular-pager>
 

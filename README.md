@@ -2,6 +2,21 @@
 @name index
 @description
 
+#New Beta Version 
+Beta version [placeholder in the 0.7.x range] is out. There are some major breaking changes from the previous versions:
+1. Most plugins are likely to no longer work. There were only two that I was aware of, so I felt
+that the benefits of doing a core rewrite outweighed the breakages that would occur. A more concrete plugin
+api will be implemented prior to release.
+2. The "pager" directive used by docular had to be renamed to "docular-pager" due to a
+conflict with the updated version of angular-bootstrap.
+3. Example code is now sandboxed when run. This means that in order to add custom code
+to the application to support these examples you must either include the code in the new
+"examples" section in the configuration, or you must provide an alternative "example.html" path
+as the docular_partial_example parameter in the configuration.
+
+To install the beta version, you *must* specify the latest beta version you wish to install in npm - 
+simply referencing "0.7.x" will not work properly.
+
 #Docular
 
 > Extensible Documentation Generation Based on AngularJS's Documentation Generation
@@ -234,15 +249,8 @@ Now within your docular-test project, run grunt to compile the Angular and Docul
 grunt docular // you can also do "grunt" because we set up "docular" as the default
 ```
 
-Now start up the NodeJS server so you can view the documentation:
-```shell
-grunt docular-server
-```
+Now serve up the files with your favorite webserver, or use `grunt-devserver` as a 
+temporary measure (documented in the "docular configurations" section of the online docs).
 
 ### Commit your changes
 As usual, edit the different packages.. your changes will immediatly propagate through the sym links to your docular-test project. Submit pull requests as desired. Thank you so much for you time, energy, and ingenuity!!
-
-
-## Release History
-version: 0.1.1
-* Included hooks into the docular api for the docular and docular-server api
