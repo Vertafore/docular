@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "docular-doc-api-doc": "*",
-    "docular-doc-api-angular": "https://github.com/Vertafore/docular-doc-api-angular.git",
+    "docular-doc-api-angular": "git+https://github.com/Vertafore/docular-doc-api-angular.git",
     "colors": "*",
     "q-fs": "*",
     "q-io": "1.9.4",
