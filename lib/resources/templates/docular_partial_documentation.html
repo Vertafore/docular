@@ -65,7 +65,7 @@
         <button ng-if="currentSource.source.contentURL" class="view-source btn btn-primary" ng-click="showSourceCode()"><i class="icon-eye-open"></i> view source</button>
 
         <div ng-if="!showSource" ng-include src="page.partialUrl" autoscroll class="content"></div>
-        <source-viewer source="source" file-type="fileType" ng-if="!!showSource"></source-viewer>
+        <source-viewer source="source" file-type="{{fileType}}" ng-if="!!showSource"></source-viewer>
         <div id="disqus" class="disqus" ng-show="discussionsEnabled">
             <h2>Discussion</h2>
             <div id="disqus_thread" class="content-panel-content"></div>
