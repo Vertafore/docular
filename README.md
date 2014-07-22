@@ -4,6 +4,7 @@
 
 #New Beta Version 
 Version 0.7.x is out. **There are some major breaking changes from the previous versions:**
+
 1. Most plugins are likely to no longer work. There were only two that I was aware of, so I felt
 that the benefits of doing a core rewrite outweighed the breakages that would occur. A more concrete plugin
 api will be implemented after this release.
