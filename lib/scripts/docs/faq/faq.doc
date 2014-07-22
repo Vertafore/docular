@@ -21,7 +21,7 @@ So, in short, if you are documenting AngularJS code, you would want to use "@ngd
 
 But of course since "@ngdoc" inherits from "@doc", you could technically use "@ngdoc". Note that "@ngdoc" does override a few of the rendering methods of the base "@doc" plugin, but not in a way that would create a significant difference.
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -59,4 +59,4 @@ This is the documentation syntax for the anchorScroll service. You notice howeve
 
 Therefore, you have two choices in putting documentation objects into the "service" {@link /documentation/docular/basics/sections module section}. You can either follow the "$" prefix and not specify a {@link /documentation/docular/basics/sections module section}, or you can use the {@link /documentation/docular/basics/naming normal naming convention} and provide the {@link /documentation/docular/basics/sections module section}.
 
-<pager></pager>
+<docular-pager></docular-pager>

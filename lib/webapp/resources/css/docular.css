@@ -34,6 +34,18 @@ img.docular-small {width: 95px; height: 25px; }
 .hide-source .btn {float:right;}
 .source-url {font-size: 15px; color: #333; text-shadow: 1px 1px 1px #fff;}
 
+/** Taken from Bootstrap 2 **/
+.nav{margin-left:0;margin-bottom:18px;list-style:none;}
+.nav>li>a{display:block;}
+.nav>li>a:hover{text-decoration:none;background-color:#eeeeee;}
+.nav .nav-header{display:block;padding:3px 15px;font-size:11px;font-weight:bold;line-height:18px;color:#999999;text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);text-transform:uppercase;}
+.nav-list{padding-left:15px;padding-right:15px;margin-bottom:0;}
+.nav-list>li>a,.nav-list .nav-header{margin-left:-15px;margin-right:-15px;text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);}
+.nav-list>li>a{padding:3px 15px;}
+.nav-list>.active>a,.nav-list>.active>a:hover{color:#ffffff;text-shadow:0 -1px 0 rgba(0, 0, 0, 0.2);background-color:#0088cc;}
+.nav-list [class^="icon-"]{margin-right:2px;}
+.nav-list .divider{height:1px;margin:8px 1px;overflow:hidden;background-color:#e5e5e5;border-bottom:1px solid #ffffff;*width:100%;*margin:-5px 0 5px;}
+
 /*============ KEYWORD SEARCH STYLING ============*/
 
 .module-section .section-count {display:none;}
@@ -91,6 +103,9 @@ img.docular-small {width: 95px; height: 25px; }
     border-left: 1px solid #333333;
     margin-top: 3px;
     margin-bottom: 3px;
+}
+.main-nav .nav > li:last-child {
+    border-right: 0px;
 }
 
 .main-nav .nav > li > a {
@@ -272,3 +287,13 @@ ul.breadcrumb li:first-child .divider {display:none;}
 
 .section-group .hero-unit h2 {font-size: 48px; text-shadow: 1px 1px 2px #ccc;}
 .section-group h2 i {color:#CCC; text-shadow: 1px 1px 1px #666; margin-right:15px;}
+
+.syntaxhighlighter {
+    padding: 10px;
+}
+
+#demoArea iframe {
+    width: 100%;
+    height: 100%;
+    border: 0px;
+}

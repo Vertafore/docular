@@ -174,7 +174,7 @@ So just because you said "Yo! Render a service for me." doesn't mean the plugin 
 </ul>
 
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 @doc overview
 @id types_ngdoc
@@ -309,4 +309,4 @@ The `@ngdoc` documentation plugin inherits all docTypes from the default `@doc` 
 
 
 
-<pager></pager>
+<docular-pager></docular-pager>

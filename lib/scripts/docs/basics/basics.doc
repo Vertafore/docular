@@ -72,7 +72,7 @@ Well, there aren't any yet, but if you are feeling frisky, you can certainly mak
 
 As new plugins become available they will have their own documentation identifier that must take the form "@doc-somename". So suppose I wanted to create my own plugin to parse, manipulate, and display documentation for PHP.  The plugin could specify that it's documentation identifier would be "@doc-php".  Then all documentation would be scanned and if the documentation section had an identifier of "@doc-php" it would use the API that results from the new plugin that inherited from the default "@doc" api.
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -172,7 +172,7 @@ For instance, `@name ng.$anchorScroll` looks incomplete, but extra rules in the 
 Feel free to take advantage of this if you please or just stick the naming convention mentioned above.
 
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -266,7 +266,7 @@ The ``name`` is the user friendly title of the document. If no ``id`` is provide
 
 The ``description`` is the meat and potatoes. The description is typically parsed via {@link https://github.com/coreyti/showdown "Showdown"}, a NodeJS implementation of markdown. It is a multiline value that provides really whatever you want. One caveat is that you DO NOT want to put markup within markdown! If you need to use markup in your description, then make sure it will not be a child of any markdown or you will get unpredictable results. Taking a look at the source of this documentation will give you a good idea of how to balance markup and markdown. Naturally, sticking with markdown will be lighter weight and will provide more consistency within the ui.
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -303,7 +303,7 @@ Now we know the "id" is also "booyah.service:yayer". Now, if you recall the {@li
 
 For more examples of module generation, check out this {@link /documentation/docular/docularcreate/firstdoc documentation steeze}.
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -326,7 +326,7 @@ This means, if you want to stick your "booyah" document in the "carl" module and
 &#64;name carl.filter:booyah
 ```
 
-#### Default Sections for the "@doc" default documentation plugin:
+#### Defualt Sections for the "@doc" default documentation plugin:
 
 ```js
 &#64;name moduleName.global
@@ -336,7 +336,7 @@ This means, if you want to stick your "booyah" document in the "carl" module and
 &#64;name moduleName.class
 ```
 
-#### Default Sections for the "@ngdoc" documentation plugin:
+#### Defualt Sections for the "@ngdoc" documentation plugin:
 
 ```js
 &#64;name moduleName.directive
@@ -368,7 +368,7 @@ This means, if you want to stick your "booyah" document in the "carl" module and
 
 This may change soon... stay posted!
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 
@@ -452,7 +452,7 @@ Currently, `method` and `property` are the only 'nested' documentation objects t
 
 Here is a better working example. The {@link /documentation/example/doctypes/doctypes_doc.class:doc_interface interface example} will show how it renders. You can then click the "show source" button on the page to view the original documentation objects. Notice how there are multiple documentation objects highlighted.
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 
@@ -461,4 +461,4 @@ Here is a better working example. The {@link /documentation/example/doctypes/doc
 @name Linking to other Docs
 @description
 
-<pager></pager>
+<docular-pager></docular-pager>
