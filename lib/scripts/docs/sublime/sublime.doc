@@ -58,7 +58,7 @@ Follow this links to get the Docular Sublime Text plugin installed
 
 Sublime will automatically install that plugin on the next restart. So now all we have to do is add keyboard shortcuts to use the plugin!
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -78,7 +78,7 @@ Now that you have added the "docular.py" plugin to Sublime, it's time to add key
 3. Close Sublime, re-open Sublime.
 4. Now open a file that has comment blocks within it. Hit "command+shift+d" (on Mac) to toggle the comment blocks.
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 

@@ -65,9 +65,36 @@ You could also target the documentation generation task directly:
 grunt docular
 </pre>
 
-## Run the local NodeJS server for immediate viewing
+## To view the documentation
+To view the documentation without uploading it to another server, specify a `docular_webapp_target` and
+add the `devserver` grunt task to your grunt configuration.
+```js
+
+
+    grunt.initConfig({
+        ....
+        docular: {
+            ....
+            docular_webapp_target: './docs'
+            ....
+        },
+        devserver: {
+            docs: {
+                options: {
+                    base: './docs',
+                }
+            }
+        }
+        ....
+    });
+
+
+grunt.loadNpmTasks('grunt-devserver');
+
+```
+Then run..
 <pre>
-grunt docular-server
+grunt devserver:docs
 </pre>
 
 
@@ -132,7 +159,7 @@ module.exports = function(grunt) {
 
 This website (grunt-docular.com) has both the ``showAngularDocs`` and ``showDocularDocs`` flags set to true. This allows you to view all the documentation for these two groups. This site has these set to true so you can see the difference between two documentation groups.
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -211,7 +238,7 @@ module.exports = function(grunt) {
 
 };
 ```
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -485,7 +512,7 @@ We made some small tweaks, but ported over most of the AngularJS "scripts" and "
 }
 ```
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -551,7 +578,7 @@ module.exports = function(grunt) {
 };
 ```
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -619,7 +646,7 @@ Currently, there are two separate calls made during navigation within the webapp
 * Page view sent when the root url is hit as "/"
 * Page view sent when any documentation file is sent. The page view is "/documentation/groupId/sectionId/pageId"
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -720,7 +747,7 @@ module.exports = function(grunt) {
     </li>
 </ul>
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -739,9 +766,7 @@ module.exports = function(grunt) {
 
 ## Defaults
 
-If you do not provide the docular_webapp_target configuration, then the webapp will be generated in a target directory that lives within the Docular node_module. This is fine if you wish to simply view your documentation locally using the grunt docular-server command.
-
-Note that the grunt docular-server command will look for this configuration in the Docular grunt configurations. There for the node server can be started within the context of your specified target.
+If you do not provide the docular_webapp_target configuration, then the webapp will be generated in a target directory that lives within the Docular node_module.
 
 Currently, the entire directory get's rewritten. We hope to soon allow you to edit files within the target directory without them being blown away. Stay tuned!
 
@@ -769,7 +794,7 @@ module.exports = function(grunt) {
 };
 ```
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 
@@ -780,4 +805,4 @@ module.exports = function(grunt) {
 
 This API is coming soon!
 
-<pager></pager>
+<docular-pager></docular-pager>

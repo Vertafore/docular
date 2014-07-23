@@ -1,0 +1,74 @@
+<div class="row" ng-class="loadingClass()">
+    <div class="col-sm-3" id="documentation_page">
+
+        <form class="well form-search" ng-submit="submitForm()">
+
+            <div class="dropdown search" ng-class="{open: focused && bestMatch.rank > 0 && bestMatch.page != page}">
+                <div class="form-group">
+                <input type="text" ng-model="search.value" placeholder="search the docs" tabindex="1" accesskey="s" class="input-medium form-control search-query" focused="focused">
+                </div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a ng-href="{{bestMatch.page.url}}">{{bestMatch.page.shortName}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="spacer"></div>
+            <div ng-show="search.value">Filtered results:</div>
+
+            <!-- here we just render regular pages -->
+            <div class="overview-items" ng-show="pages.length">
+                <ul class="nav nav-list">
+                    <li ng-repeat="page in pages" ng-class="navClass(page)">
+                        <a href="{{page.url}}" tabindex="2">{{page.shortName}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- here we just render modules -->
+            <ul class="nav nav-list well" ng-repeat="module in modules" ng-init="visible=true">
+
+                <li class="nav-header module">
+                    <button type="button" class="module-visibility btn" ng-click="visible = !visible">
+                        <i ng-class="{'icon-plus': !visible, 'icon-minus': visible}"></i>
+                    </button>
+                    <a class="guide" href="{{module.guideURL}}">module</a>
+                    <a class="code module-name" href="{{module.codeURL}}">{{module.name}}</a>
+                </li>
+
+                <!-- TODO: make this semantic (root level scope is the issue) -->
+                            <span ng-repeat="section in module.sections | orderBy:'order'" class="module-section" ng-show="visible">
+                                <li class="nav-header section">
+                                    <span class="section-count">{{section.pages.length}}</span>
+                                    <a href="{{section.link}}" class="guide">{{section.name}}</a>
+                                </li>
+                                <li ng-repeat="page in section.pages" ng-class="navClass(page)" class="doc-listing">
+                                    <a href="{{page.url}}" tabindex="2">{{page.shortName}}</a>
+                                </li>
+                            </span>
+
+            </ul>
+
+        </form>
+    </div>
+
+    <div class="col-sm-9">
+
+        <ul class="breadcrumb">
+            <li ng-repeat="crumb in breadcrumb">
+                <span ng-hide="crumb.url">{{crumb.name}}</span>
+                <a ng-show="crumb.url" href="{{crumb.url}}">{{crumb.name}}</a>
+            </li>
+        </ul>
+
+        <button ng-if="currentSource.source.contentURL" class="view-source btn btn-primary" ng-click="showSourceCode()"><i class="icon-eye-open"></i> view source</button>
+
+        <div ng-if="!showSource" ng-include src="page.partialUrl" autoscroll class="content"></div>
+        <source-viewer source="source" file-type="{{fileType}}" ng-if="!!showSource"></source-viewer>
+        <div id="disqus" class="disqus" ng-show="discussionsEnabled">
+            <h2>Discussion</h2>
+            <div id="disqus_thread" class="content-panel-content"></div>
+        </div>
+    </div>
+</div>

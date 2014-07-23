@@ -38,7 +38,7 @@ The newest versions of NodeJS come bundled with NPM ([Node Packaged Modules](htt
     <pre>npm init</pre>
     * Follow the prompts
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -86,7 +86,7 @@ module.exports = function(grunt) {
 
 Now you are ready to install and configure grunt-docular!
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 @doc overview
@@ -193,6 +193,6 @@ Documentation server running at http://127.0.0.1:8000/
 </pre>
 5. Navigate your browser to the specified URL and view Docular docs
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 

@@ -62,7 +62,7 @@ So here are a few points to note:
 4. Comments delimeted by // are not parsed so you can essentially separate your documentation comments
 from other inline comments that would best be suited for those scanning code instead of learning about your APIs.
 
-<pager></pager>
+<docular-pager></docular-pager>
 
 
 
@@ -121,4 +121,4 @@ So here are a few points to note:
 3. "Doc" files are perfect for creating overviews, tutorials, splash pages.
 
 
-<pager></pager>
+<docular-pager></docular-pager>
