@@ -74,5 +74,26 @@ exports.getModuleInfo = function (test) {
         subItem: null
     });
     
+    test.deepEqual(getModuleInfo.apply({id: 'a', docType: 'directive'}), {
+        module: 'angular',
+        section: 'directive',
+        item: 'a',
+        subItem: null
+    });
+    
+    test.deepEqual(getModuleInfo.apply({id: 'number', docType: 'filter'}), {
+        module: 'angular',
+        section: 'filter',
+        item: 'number',
+        subItem: null
+    });
+    
+    test.deepEqual(getModuleInfo.apply({id: 'input[date]', docType: 'input'}), {
+        module: 'angular',
+        section: 'directive',
+        item: 'input[date]',
+        subItem: null
+    });
+    
     test.done();
 }
