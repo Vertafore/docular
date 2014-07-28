@@ -61,7 +61,7 @@ exports.getModuleInfo = function (test) {
     });
     
     test.deepEqual(getModuleInfo.apply({id: '$exceptionHandlerProvider_mode', docType: 'method'}), {
-        module: '$exceptionHandlerProvider',
+        module: '$exceptionHandler',
         section: 'method',
         item: 'mode',
         subItem: null
