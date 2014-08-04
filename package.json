@@ -46,7 +46,9 @@
     "q": "*",
     "node.extend": "*",
     "request": "*",
-    "fs-extra": "*"
+    "fs-extra": "*",
+    "inherit": "*",
+    "htmlparser2": "*"
   },
   "keywords": [
     "angular",
