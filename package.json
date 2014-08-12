@@ -48,7 +48,8 @@
     "request": "*",
     "fs-extra": "*",
     "inherit": "*",
-    "htmlparser2": "*"
+    "htmlparser2": "*",
+    "swig": "*"
   },
   "keywords": [
     "angular",
