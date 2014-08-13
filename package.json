@@ -38,8 +38,6 @@
     "grunt": "~0.4.1"
   },
   "dependencies": {
-    "docular-doc-api-doc": "*",
-    "docular-doc-api-angular": "git+https://github.com/Vertafore/docular-doc-api-angular.git",
     "colors": "*",
     "q-fs": "*",
     "q-io": "1.9.4",
@@ -49,6 +47,7 @@
     "fs-extra": "*",
     "inherit": "*",
     "htmlparser2": "*",
+    "bower": "*",
     "swig": "*"
   },
   "keywords": [

@@ -1,0 +1,11 @@
+<div class="page index">
+    Some blurb about the group
+    <div class="well well-lg" ng-repeat="group in groups">
+        <i class="fa fa-2x" ng-class="'fa-' + group.groupIcon"></i><a ng-href="#/documentation/{{group.path}}/index">{{group.groupTitle}}</a>
+        <ul ng-if='group.groups && group.groups.length &gt; 0'>
+            <li ng-repeat='group in group.groups'>
+                <i class="fa" ng-class="'fa-' + group.groupIcon"></i><a ng-href="#/documentation/{{group.path}}/index">{{group.groupTitle}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
