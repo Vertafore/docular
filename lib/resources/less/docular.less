@@ -1,0 +1,66 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 13, 2014, 11:49:01 PM
+    Author     : Stephen
+*/
+@import "../../../bower_components/bootstrap/less/bootstrap.less";
+@import (less) "../../../bower_components/fontawesome/css/font-awesome.css";
+
+.docGroup {
+    &:extend(.well);
+    &:extend(.well-lg);
+    > i {
+        margin-right: .25em;
+        &:extend(.fa all, .fa-2x all);
+    }
+    .subgroups {
+        list-style: none;
+        i {
+            &:extend(.fa all);
+            margin-right: .75em;
+        }
+    }
+}
+.documentsList {
+    list-style: none;
+    ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    h5 {
+        overflow:hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+    }
+    .module-item {
+        position: relative;
+        small {
+            font-weight: bold;
+            float: right;
+            &+ul {
+                clear: both;
+            }
+        }
+        button {
+            margin: 0px;
+            padding: 0px;
+            position: absolute;
+            left: -1.1em;
+            top: 0px;
+            &:extend(.btn all);
+            &:extend(.fa all);
+            &:extend(.btn-primary all, .btn-xs all);
+            &.expanded {
+                &:extend(.fa-minus all);
+            }
+            &.collapsed {
+                &:extend(.fa-plus all);
+            }
+        }
+    }
+}

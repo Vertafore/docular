@@ -1,11 +1,38 @@
-<div class="page index">
-    Some blurb about the group
-    <div class="well well-lg" ng-repeat="group in groups">
-        <i class="fa fa-2x" ng-class="'fa-' + group.groupIcon"></i><a ng-href="#/documentation/{{group.path}}/index">{{group.groupTitle}}</a>
-        <ul ng-if='group.groups && group.groups.length &gt; 0'>
-            <li ng-repeat='group in group.groups'>
-                <i class="fa" ng-class="'fa-' + group.groupIcon"></i><a ng-href="#/documentation/{{group.path}}/index">{{group.groupTitle}}</a>
+<div class="container-fluid page index">
+    <div class="row">
+        <ul class="documentsList col-sm-3" ng-if="documents.length">
+            <li class="module-item" ng-repeat="module in rootLevelDocs">
+                <button ng-if="sortedDocuments[module.id].length > 0" ng-class="{expanded: !hiddenItems[module.id], collapsed: hiddenItems[module.id]}" ng-click="toggleItem(module.id)"></button>
+                <h5 class="module-title">
+                    <a title="{{module.name}}" ng-href="#/documentation/{{module.path}}/docApi/{{module.name}}">{{module.name}}</a>
+                </h5>
+                <div class="well well-sm" ng-hide="hiddenItems[module.id]" ng-if="sortedDocuments[module.id].length > 0">
+                    <ul>
+                        <li ng-repeat="documentTypes in sortedDocuments[module.id]">
+                            <small>{{documentTypes.type}}</small>
+                            <ul ng-repeat="doc in documentTypes.items">
+                                
+                                <li><a title="{{doc.name}}" ng-href="#/documentation/{{doc.path}}/docApi/{{doc.name}}">{{doc.name}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </li>
         </ul>
+        <div ng-class="documents.length > 0 ? 'col-sm-9' : 'col-sm-12'">
+            <div ng-if="!documentationItem">
+                Documentation Groups
+                <div class="docGroup" ng-repeat="group in groups">
+                    <i ng-class="'fa-' + group.groupIcon"></i><a ng-href="#/documentation/{{group.path}}/index">{{group.groupTitle}}</a>
+                    <ul class="subgroups" ng-if='group.groups && group.groups.length &gt; 0'>
+                        <li ng-repeat='group in group.groups'>
+                            <i ng-class="'fa-' + group.groupIcon"></i><a ng-href="#/documentation/{{group.path}}/index">{{group.groupTitle}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <ng-include src="includeUrl" ng-if="documentationItem"> </ng-include>
+        </div>
     </div>
 </div>

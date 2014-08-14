@@ -48,7 +48,8 @@
     "inherit": "*",
     "htmlparser2": "*",
     "bower": "*",
-    "swig": "*"
+    "swig": "*",
+    "less": "*"
   },
   "keywords": [
     "angular",
