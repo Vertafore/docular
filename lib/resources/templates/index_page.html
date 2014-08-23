@@ -2,17 +2,17 @@
     <div class="row">
         <ul class="documentsList col-sm-3" ng-if="documents.length">
             <li class="module-item" ng-repeat="module in rootLevelDocs">
-                <button ng-if="sortedDocuments[module.id].length > 0" ng-class="{expanded: !hiddenItems[module.id], collapsed: hiddenItems[module.id]}" ng-click="toggleItem(module.id)"></button>
+                <button ng-if="sortedDocuments[module.id].length > 0" ng-class="{expanded: getItemToggleStatus(module.id), collapsed: !getItemToggleStatus(module.id)}" ng-click="toggleItem(module.id)"></button>
                 <h5 class="module-title">
                     <a title="{{module.name}}" ng-href="#/documentation/{{module.path}}/docApi/{{module.name}}">{{module.name}}</a>
                 </h5>
-                <div class="well well-sm" ng-hide="hiddenItems[module.id]" ng-if="sortedDocuments[module.id].length > 0">
+                <div class="well well-sm" ng-hide="!getItemToggleStatus(module.id)" ng-if="sortedDocuments[module.id].length > 0">
                     <ul>
                         <li ng-repeat="documentTypes in sortedDocuments[module.id]">
                             <small>{{documentTypes.type}}</small>
                             <ul ng-repeat="doc in documentTypes.items">
                                 
-                                <li><a title="{{doc.name}}" ng-href="#/documentation/{{doc.path}}/docApi/{{doc.name}}">{{doc.name}}</a></li>
+                                <li><a title="{{doc.name}}" ng-href="#/documentation/{{doc.path}}/docApi/{{doc.root}}/{{doc.name}}">{{doc.name}}</a></li>
                             </ul>
                         </li>
                     </ul>
