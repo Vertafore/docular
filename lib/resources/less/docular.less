@@ -27,9 +27,17 @@ and open the template in the editor.
 }
 .documentsList {
     list-style: none;
+    .input-group-addon {
+        background-color: transparent;
+        i {
+            &:extend(.fa all);
+            &:extend(.fa-search all);
+        }
+    }
     ul {
         list-style: none;
         padding: 0px;
+        padding-left: 15px;
         margin: 0px;
     }
     h5 {

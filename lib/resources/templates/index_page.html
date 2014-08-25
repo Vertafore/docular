@@ -1,24 +1,30 @@
 <div class="container-fluid page index">
     <div class="row">
-        <ul class="documentsList col-sm-3" ng-if="documents.length">
-            <li class="module-item" ng-repeat="module in rootLevelDocs">
-                <button ng-if="sortedDocuments[module.id].length > 0" ng-class="{expanded: getItemToggleStatus(module.id), collapsed: !getItemToggleStatus(module.id)}" ng-click="toggleItem(module.id)"></button>
-                <h5 class="module-title">
-                    <a title="{{module.name}}" ng-href="#/documentation/{{module.path}}/docApi/{{module.name}}">{{module.name}}</a>
-                </h5>
-                <div class="well well-sm" ng-hide="!getItemToggleStatus(module.id)" ng-if="sortedDocuments[module.id].length > 0">
-                    <ul>
-                        <li ng-repeat="documentTypes in sortedDocuments[module.id]">
-                            <small>{{documentTypes.type}}</small>
-                            <ul ng-repeat="doc in documentTypes.items">
-                                
-                                <li><a title="{{doc.name}}" ng-href="#/documentation/{{doc.path}}/docApi/{{doc.root}}/{{doc.name}}">{{doc.name}}</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
+        <div class="col-sm-3 documentsList">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon"><i></i></span>
+                <input type="text" class="form-control" placeholder="Filter list" ng-model="search">
+            </div>
+            <ul ng-if="documents.length">
+                <li class="module-item" ng-repeat="module in rootLevelDocs">
+                    <button ng-if="sortedDocuments[module.id].length > 0" ng-class="{expanded: getItemToggleStatus(module.id), collapsed: !getItemToggleStatus(module.id)}" ng-click="toggleItem(module.id)"></button>
+                    <h5 class="module-title">
+                        <a title="{{module.name}}" ng-href="#/documentation/{{module.path}}/docApi/{{module.name}}">{{module.name}}</a>
+                    </h5>
+                    <div class="well well-sm" ng-hide="!getItemToggleStatus(module.id)" ng-if="sortedDocuments[module.id].length > 0">
+                        <ul>
+                            <li ng-repeat="documentTypes in sortedDocuments[module.id]">
+                                <small>{{documentTypes.type}}</small>
+                                <ul ng-repeat="doc in documentTypes.items">
+
+                                    <li><a title="{{doc.name}}" ng-href="#/documentation/{{doc.path}}/docApi/{{doc.root}}/{{doc.name}}">{{doc.name}}</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
         <div ng-class="documents.length > 0 ? 'col-sm-9' : 'col-sm-12'">
             <div ng-if="!documentationItem">
                 Documentation Groups
@@ -32,7 +38,7 @@
                 </div>
             </div>
             
-            <ng-include src="includeUrl" ng-if="documentationItem"> </ng-include>
+            <ng-include autoscroll="true" src="includeUrl" ng-if="documentationItem"> </ng-include>
         </div>
     </div>
 </div>
