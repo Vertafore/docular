@@ -7,16 +7,9 @@
             </a>
         </div>
         <!-- Navigation for code groups -->
-        <ul class="nav navbar-nav">
-            <li ng-repeat="group in docGroups" class="dropdown" ng-show="group.visible">
-                <a href="{{group.url}}" class="dropdown-toggle" data-toggle="dropdown" tabindex="2">
-                    <i class="{{group.groupIcon}} icon-white"></i> {{group.title}} <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                    <li ng-repeat="section in group.sections"><a href="{{section.url}}">{{section.title}}</a></li>
-                </ul>
-            </li>
-        </ul>
+        
+        <menu-dropdown groups="groups" class="base nav navbar-nav"></menu-dropdown>
+            
         <!-- Other Links -->
         <ul class="nav pull-right"></ul>
     </div>

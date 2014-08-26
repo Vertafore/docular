@@ -1,7 +1,7 @@
 <div class="container-fluid page index">
     <div class="row">
         <div class="col-sm-3 documentsList">
-            <div class="input-group input-group-sm">
+            <div class="input-group input-group-sm" ng-if="documents.length">
                 <span class="input-group-addon"><i></i></span>
                 <input type="text" class="form-control" placeholder="Filter list" ng-model="search">
             </div>
@@ -25,13 +25,13 @@
                 </li>
             </ul>
         </div>
-        <ol class="breadcrumb" ng-if="!!pageData.breadcrumbs.length">
-            <li ng-repeat="crumb in pageData.breadcrumbs" ng-class="{active: $last}">
-                <a ng-if="crumb.path" ng-href="{{crumb.path}}">{{crumb.title}}</a>
-                <span ng-if="!crumb.path">{{crumb.title}}</span>
-            </li>
-        </ol>
         <div ng-class="documents.length > 0 ? 'col-sm-9' : 'col-sm-12'">
+            <ol class="breadcrumb" ng-if="!!pageData.breadcrumbs.length">
+                <li ng-repeat="crumb in pageData.breadcrumbs" ng-class="{active: $last}">
+                    <a ng-if="crumb.path" ng-href="{{crumb.path}}">{{crumb.title}}</a>
+                    <span ng-if="!crumb.path">{{crumb.title}}</span>
+                </li>
+            </ol>
             <div ng-if="!documentationItem">
                 Documentation Groups
                 <div class="docGroup" ng-repeat="group in groups">
