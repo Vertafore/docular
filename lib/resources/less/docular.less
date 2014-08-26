@@ -73,3 +73,37 @@ and open the template in the editor.
         }
     }
 }
+
+.base.dd-menu > li > .dd-dropdown-container {
+    left: 0px;
+    top: 100%;
+    width: 100%;
+    ul {
+        width: 100%;
+    }
+}
+
+.dd-menu {
+    position: relative;
+}
+.dd-menu .dd-menu {
+    border: 1px solid gray;
+}
+.dd-menu .dd-menu li {
+    float: none;
+}
+.dd-menu a {
+    display: block !important;
+    white-space: nowrap;
+}
+.dd-menu .open > .dd-dropdown-container {
+    display: block;
+}
+.dd-dropdown-container {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    display: none;
+    left: 100%;
+    top: 0px;
+}
