@@ -10,7 +10,15 @@
         
         <menu-dropdown groups="groups" class="base nav navbar-nav"></menu-dropdown>
             
-        <!-- Other Links -->
-        <ul class="nav pull-right"></ul>
+        
+        <form class="navbar-form navbar-right" id='siteSearchForm' role="search" ng-submit='searchSite()'>
+            <div class="form-group">
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon" ng-click="searchSite()"><i></i></span>
+                    <input type="text" class="form-control" placeholder="Search Site" ng-model="siteSearch">
+                </div>
+            </div>
+        </form>
+        
     </div>
 </nav>
