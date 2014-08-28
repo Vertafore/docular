@@ -9,7 +9,7 @@
                 <li class="module-item" ng-repeat="module in rootLevelDocs">
                     <button ng-if="sortedDocuments[module.id].length > 0" ng-class="{expanded: getItemToggleStatus(module.id), collapsed: !getItemToggleStatus(module.id)}" ng-click="toggleItem(module.id)"></button>
                     <h5 class="module-title">
-                        <a title="{{module.name}}" ng-href="#/documentation/{{module.path}}/docApi/{{module.name}}">{{module.name}}</a>
+                        <a title="{{module.name}}" ng-href="#!/documentation/{{module.path}}/docApi/{{module.name}}">{{module.name}}</a>
                     </h5>
                     <div class="well well-sm" ng-hide="!getItemToggleStatus(module.id)" ng-if="sortedDocuments[module.id].length > 0">
                         <ul>
@@ -17,7 +17,7 @@
                                 <small>{{documentTypes.type}}</small>
                                 <ul ng-repeat="doc in documentTypes.items">
 
-                                    <li><a title="{{doc.name}}" ng-href="#/documentation/{{doc.path}}/docApi/{{doc.root}}/{{doc.name}}">{{doc.name}}</a></li>
+                                    <li><a title="{{doc.name}}" ng-href="#!/documentation/{{doc.path}}/docApi/{{doc.root}}/{{doc.name}}">{{doc.name}}</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -35,16 +35,18 @@
             <div ng-if="!documentationItem">
                 Documentation Groups
                 <div class="docGroup" ng-repeat="group in groups">
-                    <i ng-class="'fa-' + group.groupIcon"></i><a ng-href="#/documentation/{{group.path}}/index">{{group.groupTitle}}</a>
+                    <i ng-class="'fa-' + group.groupIcon"></i><a ng-href="#!/documentation/{{group.path}}/index">{{group.groupTitle}}</a>
                     <ul class="subgroups" ng-if='group.groups && group.groups.length &gt; 0'>
                         <li ng-repeat='group in group.groups'>
-                            <i ng-class="'fa-' + group.groupIcon"></i><a ng-href="#/documentation/{{group.path}}/index">{{group.groupTitle}}</a>
+                            <i ng-class="'fa-' + group.groupIcon"></i><a ng-href="#!/documentation/{{group.path}}/index">{{group.groupTitle}}</a>
                         </li>
                     </ul>
                 </div>
             </div>
             
             <ng-include autoscroll="true" src="includeUrl" ng-if="documentationItem"> </ng-include>
+            
+            <disqus ng-if="discussionsEnabled"></disqus>
         </div>
     </div>
 </div>
