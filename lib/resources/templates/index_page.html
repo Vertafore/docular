@@ -46,7 +46,7 @@
             <button ng-if="documentationItem && viewing!='source'" ng-click="toggleSource()">Show Source</button>
             <button ng-if="documentationItem && viewing=='source'" ng-click="toggleSource()">Show Docs</button>
             <ng-include autoscroll="true" src="includeUrl" ng-if="documentationItem && viewing !='source'"> </ng-include>
-            <source-viewer source="source.content" file-type="source.fileType"></source-viewer>
+            <source-viewer ng-if="viewing=='source'" source="source.content" file-type="source.fileType"></source-viewer>
             <disqus ng-if="discussionsEnabled"></disqus>
         </div>
     </div>
