@@ -1,0 +1,22 @@
+<div class="container page index">
+    <div class="row">
+        <form role="form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Search</label>
+              <input type="text" class="form-control" ng-model='search' placeholder="Enter search" ng-model-options="{ debounce: 500 }">
+            </div>
+          </form>
+        
+        <div ng-if='!!search'>
+            <h2>Search results for {{search}}:</h2>
+            <div ng-if='results.length === 0'>No results found</div>
+
+            <ul ng-if='results.length > 0'>
+                <li ng-repeat='doc in results'>
+                    <a ng-href='#!/documentation/{{doc.path}}/docApi/{{doc.id}}'>{{doc.name}}</a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
