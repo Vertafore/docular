@@ -74,7 +74,7 @@ grunt.initConfig({
 
 ``analytics`` (Type: `object`, default: `null`): If you want Google Analytics enabled on your documentation site, specify this argument as an object with the key `account` set to be the account id that is given to you by Google. For example, `{account: 'UA_38892'}`
 
-``groups`` (Type: `array [group object]`, default: `[]`): This is an array of group objects. Groups have their own api, but generally consists of some metadata and lists of files that need to be parsed and rendered for documentation. For more check out
+``groups`` (Type: `array [group object]`, default: `[]`): This is an array of group objects. Groups have their own api, but generally consists of some metadata and lists of files that need to be parsed and rendered for documentation. 
 
 ### Groups
 Group configurations for Angular and the docular documentation are stored and pushed into all groups if you set the showAngularDocs and showDocularDocs options to true. These configurations are identical to what you would use to configure docular to parse and render your own documentation.
