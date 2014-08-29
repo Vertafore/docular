@@ -184,7 +184,9 @@ grunt.initConfig({
             shortName: 'mydisqusshortname'
         }
     },
-
+    
+    /** Once again, this is for a slightly more complicated setup where your examples
+        require additional files to be copied in **/
     copy: {
         docFiles: {
             options: {
