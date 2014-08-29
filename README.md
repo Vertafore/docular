@@ -205,4 +205,5 @@ grunt.registerTask('docs', ['docular', 'copy:docFiles']);
 
 ```
 
-Using this setup, you would run ``grunt docs``. This would run docular, then copy the files for the running of examples. 
+Using this setup, you would run ``grunt docs``. This would run docular, then copy the files for the running of examples. Alternatively if you 
+don't need to copy any files in for example running, just run ``grunt docular``. 
