@@ -136,6 +136,7 @@ grunt.initConfig({
         useHtml5Mode: false,
         docular_webapp_target: 'target/docs',
         showAngularDocs: '1.2.15',
+        groupTitle: 'My Docs',
         examples: {
             autoBootstrap: false, //In this case, our code is bootstrapped by a file we're loading in manually - start.js
             include: {
