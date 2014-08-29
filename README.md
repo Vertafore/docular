@@ -2,37 +2,25 @@
 @name index
 @description
 
-#New Beta Version 
-Version 0.8.x is out. **There are some major breaking changes from the previous versions:**
+[![NPM version](https://badge.fury.io/js/docular.svg)](http://badge.fury.io/js/docular)
 
-1. Most plugins are likely to no longer work. There were only two that I was aware of, so I felt
-that the benefits of doing a core rewrite outweighed the breakages that would occur. A more concrete plugin
-api will be implemented after this release.
-2. The "pager" directive used by docular had to be renamed to "docular-pager" due to a
-conflict with the updated version of angular-bootstrap.
-3. Example code is now sandboxed in an iframe when run. This means that in order to add custom code
-to the application to support these examples you must either include the code in the new
-"examples" section in the configuration, or you must provide an alternative "example.html" path
-as the docular_partial_example parameter in the configuration.
+#New Beta Version 
+Version 0.8.x is out. The API at this point should be considered stable. 
 
 #Docular
 
-> Extensible Documentation Generation Based on AngularJS's Documentation Generation
+Extensible Documentation Generation Based on AngularJS's Documentation Generation
 
 #Grunt Plugin For Docular: "grunt-docular"
 
-> Docular is best used as a dependency by the grunt-docular plugin.
-> The grunt-docular plugin exposes the api in a simple fashion and helps you include documentation tasks in your grunt-based build process.
+Docular is best used as a dependency by the grunt-docular plugin.
+The grunt-docular plugin exposes the api in a simple fashion and helps you include documentation tasks in your grunt-based build process.
 
 ## Getting Started
-This plugin requires Grunt `~0.4.1`
-
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-docular --save-dev
+npm install grunt-docular
 ```
-
 One the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
@@ -78,11 +66,13 @@ grunt.initConfig({
 
 ``examples.include.css`` (Type: `array`): A list of CSS files that should be included in the example sandboxes.
 
-``showAngularDocs`` (Type: `boolean`, default: `false`): The angular source is included in the docular package so it can be parsed and rendered to both help test the docular package and provide angular documentation for apps that use it.
+``showAngularDocs`` (Type: `boolean` or `string`, default: `false`): If you'd like the angular documentation included with the app, either specify `true` (which will grab the latest master copy of angular) or the version number that you'd like downloaded. For example, `'1.2.22'`. 
 
-``showDocularDocs`` (Type: `boolean`, default: `false`): Setting this to true will have docular parse and render the documentation for the docular plugin itself. This is helpful for developers to understand the default doc api (docular-doc-api-doc) to aid them in creating their own docular api extensions.
+``showDocularDocs`` (Type: `boolean`, default: `false`): Setting this to true will have docular parse and render the documentation for docular.
 
-``docAPIOrder`` (Type: `array [string]`, default: `['doc', 'angular']`): For each docular api extension we need to know the order to include the UI scripts and CSS due to overrides etc..
+``discussions`` (Type: `object`, default: `null`): If you want Disqus enabled on your documentation site, specify this argument as an object with the key `shortName` set to be the shortened name that Disqus gives you. For example, `{shortName: 'mydocsite'}`
+
+``analytics`` (Type: `object`, default: `null`): If you want Google Analytics enabled on your documentation site, specify this argument as an object with the key `account` set to be the account id that is given to you by Google. For example, `{account: 'UA_38892'}`
 
 ``groups`` (Type: `array [group object]`, default: `[]`): This is an array of group objects. Groups have their own api, but generally consists of some metadata and lists of files that need to be parsed and rendered for documentation. For more check out
 
@@ -92,47 +82,123 @@ Group configurations for Angular and the docular documentation are stored and pu
 Here is the group configuration for Angular:
 ```js
 {
-    groupTitle: 'Angular Docs', //Title used in the UI
-    groupId: 'angular', //identifier and determines directory
-    groupIcon: 'icon-book', //Icon to use for this group
-    sections: [
+    groupTitle: 'Angular Docs',
+    groupId: 'angular',
+    groupIcon: 'icon-book',
+    groups: [
         {
             id: "api",
-            title:"Angular API",
-            scripts: ["lib/angular/js"]
+            title:"API's",
+            files: grunt.file.expand(['downloaded/angular/angular.js-' + version + '/src/**/*.js'])
         },
         {
             id: "guide",
-            title: "Developers Guide",
-            docs: ["lib/angular/ngdocs/guide"]
+            title: "Guide",
+            groupIcon: 'book',
+            files: grunt.file.expand(['downloaded/angular/angular.js-' + version + '/docs/content/guide/**/*.ngdoc'])
+        },
+        {
+            id: "misc",
+            title: "Misc",
+            groupIcon: 'empire',
+            files: grunt.file.expand(['downloaded/angular/angular.js-' + version + '/docs/content/misc/**/*.ngdoc'])
         },
         {
             id: "tutorial",
             title: "Tutorial",
-            docs: ["lib/angular/ngdocs/tutorial"]
-        },
-        {
-            id: "misc",
-            title: "Overview",
-            docs: ["lib/angular/ngdocs/misc"]
+            groupIcon: 'life-ring',
+            files: grunt.file.expand(['downloaded/angular/angular.js-' + version + '/docs/content/tutorial/**/*.ngdoc'])
         }
     ]
 }
 ```
 ### Group Object Attributes
-``groupTitle`` (required) `string` : The string value that will propogate up to the UI as the name of the tab
+``groupTitle`` (required) `string` : The string value that will propogate up to the UI as the name of the page.
 
-``groupId`` (required) `string` : This will be the id used globally within the code and as the directory for this code. It will show in the URL for these docs ie 'http:/localhost:8000/documentation/<groupId>/blah blah'.
+``groupId`` (Type: `string`, required) : This will be the id used to determine where documentation belongs within the group hierarchy. 
 
-``groupIcon`` `(default="icon-book")` string : This is an optional attribute that determines the class put on the icon attribute in the UI. This comes from Twitter Boostrap. See [Twitter Boostrap](http://twitter.github.io/bootstrap/base-css.html#images)
+``groupIcon`` (Type: `string`, default: "book") : This is an optional attribute that determines the class put on the icon attribute in the UI. Pick an icon from the [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/) list, minus the 'fa-' part. For example, `'bus'`. Or, `'cc-visa'`. 
 
-``sections`` (required) `array [sectionObject]` : This determines the different sections of documentation within your group. You can see the Angular example above in how it's documentation is broken up into sections that make logical sense.
+``groups`` (Type: `array [group object]`, default: []) : Subgroups of this group. 
 
-``sectionObject.id`` (required) `string` : This will be the id used globally within the code and will be the identifier in the url for documentation within this section ie 'http:/localhost:8000/documentation/<groupId>/<sectionObject.id>/blah blah'.
+``files`` (Type: `array [file paths]`, default: []) : An array of files that should be parsed. You should use the result from grunt.file.expand.
 
-``sectionObject.title`` (required) `string` : The title that will show in the tab drop downs for this section of documentation
+``examples`` (Type: `object`) : Any overrides that you need to set on the examples object. For instance, if all of your documentation except one group needs to be bootstrapped by the documentation, you can set `{autoBootstrap: false}` as the value for the `examples` key in that one group.
 
-``sectionObject.scripts`` (optional) `array [string]` : The scripts array is an array of paths to folders and files that contain scripts (really of any kind... could probably be php or java or whatever although that has not been tested). These files will be parsed for documentation that resides within comments (within /** and *). The end of a comment will conclude the end of a complete documentation entry.
+``docs`` and ``scripts`` are automatically merged into the ``files`` array to help with backwards compatibility. ``id`` and ``title`` are automatically renamed for the same reason.
 
-``sectionObject.docs`` (optional) `array [string]` : The docs array is an array of paths to folders and files that contain documentation. These files will be parsed assuming that the docs here are not within comments. So this is basically a text file full of docs. This is a great way to provide supplimental documentation, tutorials, guides, and definitions for types etc..
+## A complete example
 
+```js
+
+grunt.initConfig({
+    docular: {
+        useHtml5Mode: false,
+        docular_webapp_target: 'target/docs',
+        showAngularDocs: '1.2.15',
+        examples: {
+            autoBootstrap: false, //In this case, our code is bootstrapped by a file we're loading in manually - start.js
+            include: {
+                angular: false,
+                js: [
+                    './doc_files/build.standalone.compiled.js', //Our fully compiled source, ready to show working examples in the docs
+                    './doc_files/start.js' //Code we want to use to start up our examples
+                ],
+                css: [
+                    './doc_files/standalone.css' //Some styles specific to our code that we want loaded in.
+                ]
+            }
+        },
+        groups: [
+            {
+                groupTitle: 'Mobile Controls',
+                groupId: 'controls',
+                groupIcon: 'book',
+                groups: [
+                    {
+                        groupId: "api",
+                        groupTitle:"API's",
+                        files: grunt.file.expand(['src/**/*.js', '!src/**/*.spec.js', '!src/**/lib/**/*.js'])
+                    }
+                ]
+            },
+            {
+                groupTitle: 'Styleguide',
+                groupId: 'styleguide',
+                groupIcon: 'beer',
+                groups: [
+                    {
+                        groupId: "styleguide",
+                        groupTitle: "Basic Styles",
+                        files: grunt.file.expand(['src/main/resources/sass/**/*.ngdoc'])
+                    }
+                ]
+            }
+        ],
+        analytics: {
+            account: 'UA_382893289'
+        },
+        discussions: {
+            shortName: 'mydisqusshortname'
+        }
+    },
+
+    copy: {
+        docFiles: {
+            options: {
+                mode: true
+            },
+            files: [
+                {cwd: "doc_files", src: '**', expand: true, nonull: true, dest: 'target/docs/doc_files'} //Would copy all contents of 'doc_files' into our documentation folder
+            ]
+        }
+    }
+});
+
+grunt.loadNpmTasks('grunt-docular');
+
+grunt.registerTask('docs', ['docular', 'copy:docFiles']);
+
+```
+
+Using this setup, you would run ``grunt docs``. This would run docular, then copy the files for the running of examples. 
