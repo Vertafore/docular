@@ -25,8 +25,8 @@ install it with NPM globally. This is done by running ```npm install -g grunt-cl
 ##Setting up your package.json file
 
 Current docular versions:
-* [![NPM version](https://badge.fury.io/js/docular.svg)](http://badge.fury.io/js/docular)
-* [![NPM version](https://badge.fury.io/js/grunt-docular.svg)](http://badge.fury.io/js/grunt-docular)
+* docular: [![NPM version](https://badge.fury.io/js/docular.svg)](http://badge.fury.io/js/docular)
+* grunt-docular: [![NPM version](https://badge.fury.io/js/grunt-docular.svg)](http://badge.fury.io/js/grunt-docular)
 
 If you aren't familiar with what a package.json file is, you should probably [read through the docs](https://www.npmjs.org/doc/files/package.json.html).
 The shorter version is that you will want a file setup like this:
@@ -116,7 +116,7 @@ devserver: {
 This will allow you to run ```grunt devserver:docs```, which will serve up all the files on the machine's IP address
 and specified port. For example, [http://localhost:8888](http://localhost:8888). 
 
-##Documenting your code
+##Documentation generation for your code
 
 In the ```docular``` section of the config, add a ```groups``` array. Inside of that array, we need a minimum of:
 
