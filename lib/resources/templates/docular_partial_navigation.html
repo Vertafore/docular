@@ -1,23 +1,24 @@
-<nav class="navbar navbar-inverse navbar-fixed-top main-nav">
+<nav class="navbar navbar-inverse main-nav">
     <div class="container">
         <div class="navbar-header">
             <!-- logo -->
-            <a class="navbar-brand" href="#/" style="padding-top: 6px; padding-bottom: 6px;">
+            <a class="navbar-brand" href="#!/" style="padding-top: 6px; padding-bottom: 6px;">
                 <img class="docular-small" src="resources/img/docular-small.png">
             </a>
         </div>
         <!-- Navigation for code groups -->
-        <ul class="nav navbar-nav">
-            <li ng-repeat="group in docGroups" class="dropdown" ng-show="group.visible">
-                <a href="{{group.url}}" class="dropdown-toggle" data-toggle="dropdown" tabindex="2">
-                    <i class="{{group.groupIcon}} icon-white"></i> {{group.title}} <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                    <li ng-repeat="section in group.sections"><a href="{{section.url}}">{{section.title}}</a></li>
-                </ul>
-            </li>
-        </ul>
-        <!-- Other Links -->
-        <ul class="nav pull-right"></ul>
+        
+        <menu-dropdown groups="groups" class="base nav navbar-nav"></menu-dropdown>
+            
+        
+        <form class="navbar-form navbar-right" id='siteSearchForm' role="search" ng-submit='searchSite()'>
+            <div class="form-group">
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon" ng-click="searchSite()"><i></i></span>
+                    <input type="text" class="form-control" placeholder="Search Site" ng-model="siteSearch.value">
+                </div>
+            </div>
+        </form>
+        
     </div>
 </nav>

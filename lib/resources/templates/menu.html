@@ -1,0 +1,8 @@
+<ul class="dd-menu">
+    <li ng-repeat="group in groups" ng-init="open = false" ng-mouseover="open = true" ng-mouseleave="open=false" ng-class="{open: open}">
+        <a href="#!/documentation/{{group.path}}/index" tabindex="2">
+            <i class="fa fa-{{group.groupIcon}} icon-white"></i> {{group.groupTitle}} <i ng-if="group.groups.length > 0" class="fa fa-fw" ng-class="{'fa-caret-down': !open, 'fa-caret-right': open}"></i>
+        </a>
+        <div class="dd-dropdown-container"></div>
+    </li>
+</ul>

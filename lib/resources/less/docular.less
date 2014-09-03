@@ -1,0 +1,134 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 13, 2014, 11:49:01 PM
+    Author     : Stephen
+*/
+@import "../../../bower_components/bootstrap/less/bootstrap.less";
+@import (less) "../../../bower_components/fontawesome/css/font-awesome.css";
+
+.navbar {
+    border-radius: 0px !important;
+}
+
+.docGroup {
+    &:extend(.well);
+    &:extend(.well-lg);
+    > i {
+        margin-right: .25em;
+        &:extend(.fa all, .fa-2x all);
+    }
+    .subgroups {
+        list-style: none;
+        i {
+            &:extend(.fa all);
+            margin-right: .75em;
+        }
+    }
+}
+.documentsList {
+    list-style: none;
+    .input-group-addon {
+        background-color: transparent;
+        i {
+            &:extend(.fa all);
+            &:extend(.fa-search all);
+        }
+    }
+    ul {
+        list-style: none;
+        padding: 0px;
+        padding-left: 15px;
+        margin: 0px;
+    }
+    h5 {
+        overflow:hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        line-height: 1.2;
+    }
+    .module-item {
+        position: relative;
+        small {
+            font-weight: bold;
+            float: right;
+            &+ul {
+                clear: both;
+            }
+        }
+        button {
+            margin: 0px;
+            padding: 0px;
+            position: absolute;
+            left: -1.1em;
+            top: 0px;
+            &:extend(.btn all);
+            &:extend(.fa all);
+            &:extend(.btn-primary all, .btn-xs all);
+            &.expanded {
+                &:extend(.fa-minus all);
+            }
+            &.collapsed {
+                &:extend(.fa-plus all);
+            }
+        }
+    }
+}
+
+.base.dd-menu > li > .dd-dropdown-container {
+    left: 0px;
+    top: 100%;
+    width: 100%;
+    ul {
+        width: 100%;
+    }
+}
+
+.dd-menu {
+    position: relative;
+}
+.dd-menu .dd-menu {
+    border: 1px solid gray;
+}
+.dd-menu .dd-menu li {
+    float: none;
+}
+.dd-menu a {
+    display: block !important;
+    white-space: nowrap;
+}
+.dd-menu .open > .dd-dropdown-container {
+    display: block;
+}
+.dd-dropdown-container {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    display: none;
+    left: 100%;
+    top: 0px;
+}
+
+#showSourceButton, #hideSourceButton {
+    &:extend(.btn all, .btn-info all, .btn-sm all);
+    float: right;
+}
+.source-viewer-container {
+    clear: both;
+}
+
+#siteSearchForm {
+    i {
+        &:extend(.fa all);
+        &:extend(.fa-search all);
+    }
+}
+
+#externalCopyright {
+    color: #777777;
+    line-height: 20px;
+    padding-top: 15px;
+}

@@ -1,7 +1,7 @@
 {
   "name": "docular",
   "description": "Extensible Documentation Generation Based on AngularJS's Documentation Generation",
-  "version": "0.7.3",
+  "version": "0.8.0",
   "homepage": "http://grunt-docular.com",
   "author": {
     "name": "Stephen Liberty",
@@ -34,19 +34,22 @@
   "devDependencies": {
     "grunt-contrib-jshint": "~0.1.1",
     "grunt-contrib-clean": "~0.4.0",
-    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-nodeunit": "~0.4.1",
     "grunt": "~0.4.1"
   },
   "dependencies": {
-    "docular-doc-api-doc": "*",
-    "docular-doc-api-angular": "git+https://github.com/Vertafore/docular-doc-api-angular.git",
     "colors": "*",
     "q-fs": "*",
     "q-io": "1.9.4",
     "q": "*",
     "node.extend": "*",
     "request": "*",
-    "fs-extra": "*"
+    "fs-extra": "*",
+    "inherit": "*",
+    "htmlparser2": "*",
+    "bower": "*",
+    "swig": "*",
+    "less": "*"
   },
   "keywords": [
     "angular",

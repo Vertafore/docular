@@ -1,0 +1,53 @@
+<div class="container page index">
+    <div class="row">
+        <div class="col-sm-3 documentsList">
+            <div class="input-group input-group-sm" ng-if="documents.length">
+                <span class="input-group-addon" ng-click="forceSearch()"><i></i></span>
+                <input type="text" class="form-control" placeholder="Filter list" ng-model="search.value">
+            </div>
+            <ul ng-if="documents.length">
+                <li class="module-item" ng-repeat="module in rootLevelDocs">
+                    <button ng-if="sortedDocuments[module.id].length > 0" ng-class="{expanded: getItemToggleStatus(module.id), collapsed: !getItemToggleStatus(module.id)}" ng-click="toggleItem(module.id)"></button>
+                    <h5 class="module-title">
+                        <a title="{{module.name}}" ng-href="#!/documentation/{{module.path}}/docApi/{{module.name}}">{{module.name}}</a>
+                    </h5>
+                    <div class="well well-sm" ng-hide="!getItemToggleStatus(module.id)" ng-if="sortedDocuments[module.id].length > 0">
+                        <ul>
+                            <li ng-repeat="documentTypes in sortedDocuments[module.id]">
+                                <small>{{documentTypes.type}}</small>
+                                <ul ng-repeat="doc in documentTypes.items">
+
+                                    <li><a title="{{doc.name}}" ng-href="#!/documentation/{{doc.path}}/docApi/{{doc.root}}/{{doc.name}}">{{doc.name}}</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div ng-class="documents.length > 0 ? 'col-sm-9' : 'col-sm-12'">
+            <ol class="breadcrumb" ng-if="!!pageData.breadcrumbs.length">
+                <li ng-repeat="crumb in pageData.breadcrumbs" ng-class="{active: $last}">
+                    <a ng-if="crumb.path" ng-href="{{crumb.path}}">{{crumb.title}}</a>
+                    <span ng-if="!crumb.path">{{crumb.title}}</span>
+                </li>
+            </ol>
+            <div ng-if="!documentationItem">
+                Documentation Groups
+                <div class="docGroup" ng-repeat="group in groups">
+                    <i ng-class="'fa-' + group.groupIcon"></i><a ng-href="#!/documentation/{{group.path}}/index">{{group.groupTitle}}</a>
+                    <ul class="subgroups" ng-if='group.groups && group.groups.length &gt; 0'>
+                        <li ng-repeat='group in group.groups'>
+                            <i ng-class="'fa-' + group.groupIcon"></i><a ng-href="#!/documentation/{{group.path}}/index">{{group.groupTitle}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button ng-if="documentationItem && viewing!='source'" id='showSourceButton' ng-click="toggleSource()">Show Source</button>
+            <button ng-if="documentationItem && viewing=='source'" id='hideSourceButton' ng-click="toggleSource()">Show Docs</button>
+            <ng-include autoscroll="true" src="includeUrl" ng-if="documentationItem && viewing !='source'"> </ng-include>
+            <source-viewer ng-if="viewing=='source'" source="source.content" file-type="{{source.fileType}}"></source-viewer>
+            <disqus ng-if="discussionsEnabled"></disqus>
+        </div>
+    </div>
+</div>

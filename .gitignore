@@ -1,3 +1,5 @@
+lib/resources/css/
+bower_components
 tmp
 .DS_Store
 lib/webapp/resources/doc_api_resources/*
