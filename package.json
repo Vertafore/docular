@@ -1,7 +1,7 @@
 {
   "name": "docular",
   "description": "Extensible Documentation Generation Based on AngularJS's Documentation Generation",
-  "version": "0.8.0",
+  "version": "0.8.3",
   "homepage": "http://grunt-docular.com",
   "author": {
     "name": "Stephen Liberty",
@@ -24,7 +24,7 @@
       "url": "https://creativecommons.org/licenses/by/3.0/us/legalcode"
     }
   ],
-  "main": "Gruntfile.js",
+  "main": "index.js",
   "engines": {
     "node": ">= 0.8.0"
   },
@@ -39,8 +39,6 @@
   },
   "dependencies": {
     "colors": "*",
-    "q-fs": "*",
-    "q-io": "1.9.4",
     "q": "*",
     "node.extend": "*",
     "request": "*",

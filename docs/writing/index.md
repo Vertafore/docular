@@ -112,3 +112,11 @@ Here are some examples of documentation, right from the Angular source:
 
 Anything in the @description is considered to be markdown syntax, and so you can use markdown for formatting, links,
 code snippets, etc. 
+
+##Extra parameters
+
+There are some parameters that I feel are missing from the angular documentation syntax, which are going to be added as 
+time allows.
+
+1. @deprecated. In large projects, this is a necessity.
+2. @todo. This helps keep 'todo' items from floating under the radar. 
