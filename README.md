@@ -48,7 +48,7 @@ grunt.initConfig({
 ```
 
 ### Options
-``baseURL`` (Type: `string`, default: `""`): Angular uses the <base> tag to designate the baseUrl for an app. This helps resolve routes and location through the $location service
+``baseUrl`` (Type: `string`, default: `""`): Angular uses the <base> tag to designate the baseUrl for an app. This helps resolve routes and location through the $location service
 
 ``useHtml5Mode`` (Type: `boolean`, default: `false`): Whether or not to use angular's html5 mode. The html5 mode requires a specialized hosting setup, which may be too much work for simply serving documentation.
 
