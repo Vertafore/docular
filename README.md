@@ -158,8 +158,8 @@ grunt.initConfig({
                 groupIcon: 'book',
                 groups: [
                     {
-                        groupId: "api",
-                        groupTitle:"API's",
+                        id: "api",
+                        title:"API's",
                         files: grunt.file.expand(['src/**/*.js', '!src/**/*.spec.js', '!src/**/lib/**/*.js'])
                     }
                 ]
@@ -170,8 +170,8 @@ grunt.initConfig({
                 groupIcon: 'beer',
                 groups: [
                     {
-                        groupId: "styleguide",
-                        groupTitle: "Basic Styles",
+                        id: "styleguide",
+                        title: "Basic Styles",
                         files: grunt.file.expand(['src/main/resources/sass/**/*.ngdoc'])
                     }
                 ]
