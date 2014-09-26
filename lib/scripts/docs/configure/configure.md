@@ -718,7 +718,7 @@ module.exports = function(grunt) {
         Documentation is almost complete, and a final list of features for the first release have been identified. Stay tuned!
     </p>
 
-    <a href="https://github.com/gitsome/docular/issues?state=open" target="_blank" class="btn ">Suggest a Feature / Report a Bug</a>
+    <a href="https://github.com/Vertafore/grunt-docular/docular/issues?state=open" target="_blank" class="btn ">Suggest a Feature / Report a Bug</a>
 
     <h2><i class="icon-flag" style="color:#555;"></i> Get Started </h2>
     <documentation-section-list group="docular" header="false"></documentation-section-list>
