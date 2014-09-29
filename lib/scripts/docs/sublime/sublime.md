@@ -45,7 +45,7 @@ Follow this links to get the Docular Sublime Text plugin installed
 @name Install Sublime Plugin
 @description
 
-1. Download the plugin from Github <a href="https://github.com/gitsome/docular-sublime-plugin" target="_blank">docular-sublime-plugin</a>
+1. Download the plugin from Github <a href="https://github.com/Vertafore/grunt-docular/docular-sublime-plugin" target="_blank">docular-sublime-plugin</a>
 
 2. Open Sublime Text, and choose:
 ```bash
