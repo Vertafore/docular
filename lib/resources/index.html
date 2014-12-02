@@ -13,7 +13,7 @@
     <meta name="fragment" content="!">
     <title ng-bind-template="Docular: {{pageData.title}}">Docular</title>
     <base href="{=baseUrl=}">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link rel="stylesheet" href="{=baseUrl=}resources/js/highlight/styles/default.min.css">
     {% for i,stylesheet in css %}
     <link href="{=baseUrl=}{=stylesheet=}" rel="stylesheet" type="text/css">
     {% endfor %}
@@ -23,11 +23,8 @@
     <script src="{=baseUrl=}{=script=}"></script>
     {% endfor %}
     
-    <script src="{=baseUrl=}resources/libraries/highlight-js/highlight.js"></script>
-    {% for i,language in languages %}
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/{=language=}.min.js"></script>
-    {% endfor %}
-    
+    <script src="{=baseUrl=}resources/js/highlight/highlight.pack.js"></script>
+
     <script src="{=baseUrl=}resources/js/controllers/index.js"></script>
     <script src="{=baseUrl=}resources/js/directives/index.js"></script>
     <script src="{=baseUrl=}resources/js/services/index.js"></script>
