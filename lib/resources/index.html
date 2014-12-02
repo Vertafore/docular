@@ -18,15 +18,14 @@
     <link href="{=baseUrl=}{=stylesheet=}" rel="stylesheet" type="text/css">
     {% endfor %}
     <link href="{=baseUrl=}resources/css/docular.css" rel="stylesheet" type="text/css">
-    <link href="{=baseUrl=}resources/doc_api_resources/doc_api.css" rel="stylesheet" type="text/css">
-    
+
     {% for i,script in javascript %}
     <script src="{=baseUrl=}{=script=}"></script>
     {% endfor %}
     
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+    <script src="{=baseUrl=}resources/libraries/highlight-js/highlight.js"></script>
     {% for i,language in languages %}
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/languages/{=language=}.min.js"></script>
+    <script src="{=baseUrl=}resources/libraries/highlight-js/languages/{=language=}.js"></script>
     {% endfor %}
     
     <script src="{=baseUrl=}resources/js/controllers/index.js"></script>
