@@ -84,28 +84,28 @@ Here is the group configuration for Angular:
 {
     groupTitle: 'Angular Docs',
     groupId: 'angular',
-    groupIcon: 'icon-book',
+    groupIcon: 'book',
     groups: [
         {
-            id: "api",
-            title:"API's",
+            groupId: "api",
+            groupTitle:"API's",
             files: grunt.file.expand(['downloaded/angular/angular.js-' + version + '/src/**/*.js'])
         },
         {
-            id: "guide",
-            title: "Guide",
+            groupId: "guide",
+            groupTitle: "Guide",
             groupIcon: 'book',
             files: grunt.file.expand(['downloaded/angular/angular.js-' + version + '/docs/content/guide/**/*.ngdoc'])
         },
         {
-            id: "misc",
-            title: "Misc",
+            groupId: "misc",
+            groupTitle: "Misc",
             groupIcon: 'empire',
             files: grunt.file.expand(['downloaded/angular/angular.js-' + version + '/docs/content/misc/**/*.ngdoc'])
         },
         {
-            id: "tutorial",
-            title: "Tutorial",
+            groupId: "tutorial",
+            groupTitle: "Tutorial",
             groupIcon: 'life-ring',
             files: grunt.file.expand(['downloaded/angular/angular.js-' + version + '/docs/content/tutorial/**/*.ngdoc'])
         }
