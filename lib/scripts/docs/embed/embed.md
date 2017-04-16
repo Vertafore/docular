@@ -3,7 +3,7 @@
 @name Embedding Documentation
 @description
 
-#Embedding Documentation
+# Embedding Documentation
 
 Follow this overview to familiarize yourself with the basics of embedding documentation within your script files and separate 'doc' files.
 

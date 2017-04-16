@@ -1,7 +1,7 @@
 @doc overview
 @name index
 @description
-#Sublime Text Support
+# Sublime Text Support
 
 So putting inline documentation within your script files can get a little unruly. Your script files should be fairly small to begin with, but sometimes the documentation that is displayed to those interested in learning your software can burden those looking at the code on a day to day basis.
 
@@ -27,13 +27,13 @@ So putting inline documentation within your script files can get a little unruly
 
 When these conventions are followed, you can then hide all comment blocks and keep all single line comments visible during development!
 
-##Sublime Time
+## Sublime Time
 
 We have written a simple Sublime Text plugin to help with this process. The plugin uses the native "fold" functionality in the Sublime Text API to toggle the visibility of comment blocks.
 
 Once you add the plugin and add the key bindings, you can quickly toggle the visibility of comment blocks so you can focus on improving code or toggle again to focus on improving documentation. Keen!
 
-##Sublime Plugin Installation
+## Sublime Plugin Installation
 
 Follow this links to get the Docular Sublime Text plugin installed
 

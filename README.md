@@ -4,14 +4,14 @@
 
 [![NPM version](https://badge.fury.io/js/docular.svg)](http://badge.fury.io/js/docular)
 
-#New Beta Version 
+# New Beta Version 
 Version 0.8.x is out. The API at this point should be considered stable. 
 
-#Docular
+# Docular
 
 Extensible Documentation Generation Based on AngularJS's Documentation Generation
 
-#Grunt Plugin For Docular: "grunt-docular"
+# Grunt Plugin For Docular: "grunt-docular"
 
 Docular is best used as a dependency by the grunt-docular plugin.
 The grunt-docular plugin exposes the api in a simple fashion and helps you include documentation tasks in your grunt-based build process.

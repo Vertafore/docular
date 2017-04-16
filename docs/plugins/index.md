@@ -1,4 +1,4 @@
-#Docular plugins
+# Docular plugins
 
 There are currently two officially available plugins for Docular. 
 
@@ -7,13 +7,13 @@ There are currently two officially available plugins for Docular.
 * [docular-markdown-plugin](https://github.com/Vertafore/docular-markdown-plugin)
   This plugin gives Docular the ability to create pages based off of simple markdown files.
   
-##Creating a plugin
+## Creating a plugin
 
 The plugin API has changed significantly since 0.6.x due to a strong desire to limit how much Docular has to call each plugin. Instead, it was desired that each plugin should listen for events emitted from Docular and respond appropriately. 
 
 To create a plugin, you need to setup your project in such a way that Docular understands it. 
 
-###Your package.json
+### Your package.json
 
 At minimum, you should specify what your main file is for your project. To do this, set the ```main``` key to your main file. For example: 
 
@@ -28,7 +28,7 @@ At minimum, you should specify what your main file is for your project. To do th
 
 Docular uses the ['q' library](https://github.com/kriskowal/q), so you should also use that or a library that is compatible with it. This is because certain events allow you to add promises to a shared array so that Docular will wait until your plugin is ready for the application to proceed. This can be seen in docular-ng-plugin, where the ProcessConfig event is called and it fetches Angular code for documenting if needed. 
 
-###Your main file
+### Your main file
 
 Your main file needs to export a "new-able" function that has at least one method called "register". The "register" method will be provided the running instance of Docular, so that it may attach itself to events. Calling methods on the Docular instance is highly discouraged, as API changes may completely break your plugin.
 
@@ -51,7 +51,7 @@ As an example, this is the register method from the docular-ng-plugin:
 
 ```
 
-###Events
+### Events
 
 There are currently eight events that can be listened to. 
 
@@ -64,7 +64,7 @@ There are currently eight events that can be listened to.
 7. GetStyles. This event is emitted with one parameter - an array which you can push [less](http://lesscss.org/) styles into which will be appended to the bottom of the Docular stylesheet. You should use this if you want to extend Docular or Bootstrap styles in your plugin. This may change in the future, as the current implementation feels a bit hacky.
 8. CopyFiles. This event is emitted with one parameter - the folder where all of the generated files will be stored. You should use this event if you need to copy some of your own files. Use the 'sync' rather than 'async' functions here. Too many open files will cause the grunt process to crash, so it was decided that this would not be a promise setup.
 
-###The document model
+### The document model
 
 A document model is just an object that must have the following methods and properties exposed:
 

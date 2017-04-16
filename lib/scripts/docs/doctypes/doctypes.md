@@ -3,7 +3,7 @@
 @name DocTypes Intro
 @description
 
-#Documentation Types (DocTypes)
+# Documentation Types (DocTypes)
 
 Things to know about ``docTypes``.
 
