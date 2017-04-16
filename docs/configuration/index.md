@@ -1,4 +1,4 @@
-#Configuration
+# Configuration
 
 Docular has a small set of configuration options that you should be familiar with. When you configure docular, you
 are actually configuring the base 'group'. Each 'group' accepts the same parameters, but some are only respected
@@ -8,7 +8,7 @@ Docular is also split up into plugins. The primary codebase is responsible for s
 
 All plugin parameters are part of the group object, unless otherwise specified.
 
-##Docular parameters
+## Docular parameters
 
 Required parameters are in **bold**.
 
@@ -32,7 +32,7 @@ Required parameters are in **bold**.
 | showDocularDocs   | ```false``` | Should Docular docs be included in the output? If so, they will be listed under a 'Docular' tab. |
 | useHtml5Mode      | ```false``` | Whether or not to use Angular's HTML5 mode. If you use this mode, you must have the proper hosting setup to serve html5 mode pages. Docular's grunt task comes with a simple server that will do this for you, but should not be considered production-ready.|
 
-##docular-ng-plugin parameters.
+## docular-ng-plugin parameters.
 
 Required parameters are in **bold**.
 
@@ -45,7 +45,7 @@ Required parameters are in **bold**.
 | examples.include.js | ```empty array``` | An array of javascript files that should be included in the examples. This is relative to the root of the docular application. For example, ```['./doc_files/start.js']```. This will cause the examples to load a file called ```start.js```.|
 | examples.include.css | ```empty array``` | Basically the exact same thing as ```examples.include.js```, except is meant for CSS files |
 
-##Notes on backwards compatibility with 0.6.x
+## Notes on backwards compatibility with 0.6.x
 
 * The section key is read in as a group key.
 * The scripts and docs keys are read in and appended to the files key.

@@ -1,7 +1,7 @@
 @doc overview
 @name index
 @description
-#Installing Docular
+# Installing Docular
 
 Installing Docular is as simple as adding the grunt-docular Grunt plugin to your project, customizing the Docular configurations, and then simply authoring your own documentation.
 

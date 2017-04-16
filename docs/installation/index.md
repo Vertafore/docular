@@ -1,4 +1,4 @@
-#Installation
+# Installation
 
 Installing docular is fairly straightforward. The most likely way you will use docular is through its 
 [grunt-docular](https://github.com/Vertafore/grunt-docular)
@@ -9,20 +9,20 @@ plugin. There are few prerequisites that you must manually take care of.
 3. You need to setup your package.json file.
 4. You need to setup your Gruntfile.js file.
 
-##Installing Node
+## Installing Node
 
 For most systems, installing Node is straightforward. For Windows and Mac, there are prebuilt installers available
 on the Node.js [download page](http://nodejs.org/download/). Most linux systems will install Node through their own 
 package system, though some do not bundle NPM (Node Package Manager) with the Node application. For instance, in Ubuntu
 you need to run ```sudo apt-get install nodejs``` and then ```sudo apt-get install npm```. 
 
-##Installing Grunt
+## Installing Grunt
 
 In order to run Grunt via the command line, as you'll have to do in order to run the grunt-docular task, you will need
 to install the [grunt-cli](https://www.npmjs.org/package/grunt-cli) package. Since it's an executable, you need to 
 install it with NPM globally. This is done by running ```npm install -g grunt-cli```. 
 
-##Setting up your package.json file
+## Setting up your package.json file
 
 Current docular versions:
 * docular: [![NPM version](https://badge.fury.io/js/docular.svg)](http://badge.fury.io/js/docular)
@@ -52,7 +52,7 @@ will ensure you get bugfixes, but shouldn't cause you to switch to minor or majo
 After you have those two items added to ```devDependencies```, run ```npm install```. This will spider through all of the
 dependencies and install them.
 
-##Setting up your Gruntfile.js
+## Setting up your Gruntfile.js
 
 Specific configuration parameters can be found in the @{link configuration/index configuration docs}.
 
@@ -83,7 +83,7 @@ into documentation. This is great, but you need to actually be able to see it.
 
 There are a couple options here. 
 
-###Using grunt-docular's builtin server.
+### Using grunt-docular's builtin server.
 One of Docular's contributors added a small webserver to it called 'docularserver'. To make that work, 
 add the follwoing to your initConfig object:
 
@@ -96,7 +96,7 @@ docularserver: {
 
 Then run ```grunt docularserver```. Voila - your documentation has been served.
 
-###Using a third party server
+### Using a third party server
 
 You could serve these files up with something like Apache.. or you can try serving them with another Grunt task.
 
@@ -116,7 +116,7 @@ devserver: {
 This will allow you to run ```grunt devserver:docs```, which will serve up all the files on the machine's IP address
 and specified port. For example, [http://localhost:8888](http://localhost:8888). 
 
-##Documentation generation for your code
+## Documentation generation for your code
 
 In the ```docular``` section of the config, add a ```groups``` array. Inside of that array, we need a minimum of:
 

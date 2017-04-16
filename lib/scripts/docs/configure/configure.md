@@ -3,7 +3,7 @@
 @name Configure Docular
 @description
 
-#Docular Configurations
+# Docular Configurations
 
 The links below illustrate the use of Docular configurations via the grunt-docular.com website. The links will take you through each of configurations listed at the bottom of this page in the example Gruntfile.js file.
 

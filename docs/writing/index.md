@@ -1,4 +1,4 @@
-#Writing documentation
+# Writing documentation
 
 Docular's first and foremost goal is to stay in step with Angular's documentation practices. To that end, you should read their [documentation guide](https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation). 
 
@@ -113,7 +113,7 @@ Here are some examples of documentation, right from the Angular source:
 Anything in the @description is considered to be markdown syntax, and so you can use markdown for formatting, links,
 code snippets, etc. 
 
-##Extra parameters
+## Extra parameters
 
 There are some parameters that I feel are missing from the angular documentation syntax, which are going to be added as 
 time allows.

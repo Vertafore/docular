@@ -3,7 +3,7 @@
 @name
 @description
 
-#Documentation Basics
+# Documentation Basics
 
 Check out the following links to understand the basic documentation syntax, naming conventions, and module management.
 
@@ -215,7 +215,7 @@ Here is a markdown list
 
 In every case there is a key next to the "@" symbol and then the value is everything after the key until the next key is found, the code block ends, or the next {@link identifier documentation identifier} is encountered. Multiline is supported but is typically used most often for "@description" type keys.
 
-#Standard Key Value Pairs
+# Standard Key Value Pairs
 
 ## 1. &#64;doc / &#64;ngdoc - Documentation Identifier And Doctype
 
